@@ -416,7 +416,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dNMQuKRuEeyAqaRHAzgpag"/>
           </children>
           <element xmi:type="uml:UseCase" href="OMI%20Finder.uml#_dNEU4KRuEeyAqaRHAzgpag"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dNMQsaRuEeyAqaRHAzgpag" x="94" y="14" width="201" height="81"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dNMQsaRuEeyAqaRHAzgpag" x="134" y="14" width="201" height="81"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_fCbUAKRuEeyAqaRHAzgpag" type="UseCase_Shape_CCN">
           <children xmi:type="notation:DecorationNode" xmi:id="_fCb7EKRuEeyAqaRHAzgpag" type="UseCase_NameLabel_CCN"/>
@@ -429,7 +429,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fCb7FqRuEeyAqaRHAzgpag"/>
           </children>
           <element xmi:type="uml:UseCase" href="OMI%20Finder.uml#_fCXCkKRuEeyAqaRHAzgpag"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fCbUAaRuEeyAqaRHAzgpag" x="334" y="74" width="221" height="101"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fCbUAaRuEeyAqaRHAzgpag" x="294" y="74" width="221" height="101"/>
         </children>
         <children xmi:type="notation:Shape" xmi:id="_jhxNIKRuEeyAqaRHAzgpag" type="UseCase_Shape_CCN">
           <children xmi:type="notation:DecorationNode" xmi:id="_jhxNIqRuEeyAqaRHAzgpag" type="UseCase_NameLabel_CCN"/>
@@ -622,6 +622,21 @@
       <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_IXmFYqRvEeyAqaRHAzgpag" points="[260, 301, -643984, -643984]$[160, 301, -643984, -643984]$[160, 180, -643984, -643984]$[121, 180, -643984, -643984]"/>
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IX0u4KRvEeyAqaRHAzgpag" id="(0.0,0.5061728395061729)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_IX0u4aRvEeyAqaRHAzgpag" id="(1.0,0.594059405940594)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_VeBigKVTEeyg7bGU02L4Gg" type="Extend_Edge" source="_jhxNIKRuEeyAqaRHAzgpag" target="_dNMQsKRuEeyAqaRHAzgpag">
+      <children xmi:type="notation:DecorationNode" xmi:id="_VeD-wKVTEeyg7bGU02L4Gg" type="Extend_KeywordLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_Wc0tEKVTEeyg7bGU02L4Gg" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_VeEl0KVTEeyg7bGU02L4Gg" x="-1" y="18"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_VeEl0aVTEeyg7bGU02L4Gg" type="Extend_StereotypeLabel">
+        <styles xmi:type="notation:BooleanValueStyle" xmi:id="_Wc_sMKVTEeyg7bGU02L4Gg" name="IS_UPDATED_POSITION" booleanValue="true"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_VeEl0qVTEeyg7bGU02L4Gg" x="-11" y="13"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_VeBigaVTEeyg7bGU02L4Gg"/>
+      <element xmi:type="uml:Extend" href="OMI%20Finder.uml#_VdtZcKVTEeyg7bGU02L4Gg"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VeBigqVTEeyg7bGU02L4Gg" points="[860, 185, -643984, -643984]$[860, 100, -643984, -643984]$[520, 94, -643984, -643984]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VehRwKVTEeyg7bGU02L4Gg" id="(0.27149321266968324,0.04950495049504951)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VehRwaVTEeyg7bGU02L4Gg" id="(1.0,0.49382716049382713)"/>
     </edges>
   </notation:Diagram>
 </xmi:XMI>

@@ -90,10 +90,14 @@
   <packagedElement xmi:type="uml:Actor" xmi:id="_Ag7gkKRuEeyAqaRHAzgpag" name="Freemium Users"/>
   <packagedElement xmi:type="uml:Actor" xmi:id="_CtL8wKRuEeyAqaRHAzgpag" name="External Geolocation API"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_JkAqoKRuEeyAqaRHAzgpag" name="Web Interface" useCase="_dNEU4KRuEeyAqaRHAzgpag _fCXCkKRuEeyAqaRHAzgpag _jhs7sKRuEeyAqaRHAzgpag _msrp8KRuEeyAqaRHAzgpag">
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_dNEU4KRuEeyAqaRHAzgpag" name="UC9F: Check Data by Address" subject="_JkAqoKRuEeyAqaRHAzgpag"/>
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_dNEU4KRuEeyAqaRHAzgpag" name="UC9F: Check Data by Address" subject="_JkAqoKRuEeyAqaRHAzgpag">
+      <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_Vdv1sKVTEeyg7bGU02L4Gg" name="ExtensionPoint1"/>
+    </ownedUseCase>
     <ownedUseCase xmi:type="uml:UseCase" xmi:id="_fCXCkKRuEeyAqaRHAzgpag" name="UC10F: Single Query Requests on Database" subject="_JkAqoKRuEeyAqaRHAzgpag"/>
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_jhs7sKRuEeyAqaRHAzgpag" name="UC12E: Geolocation Integration" subject="_JkAqoKRuEeyAqaRHAzgpag"/>
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_msrp8KRuEeyAqaRHAzgpag" name="UC11F: Access to Readable API Documentation" subject="_JkAqoKRuEeyAqaRHAzgpag"/>
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_jhs7sKRuEeyAqaRHAzgpag" name="UC11E: Geolocation Integration" subject="_JkAqoKRuEeyAqaRHAzgpag">
+      <extend xmi:type="uml:Extend" xmi:id="_VdtZcKVTEeyg7bGU02L4Gg" extendedCase="_dNEU4KRuEeyAqaRHAzgpag" extensionLocation="_Vdv1sKVTEeyg7bGU02L4Gg"/>
+    </ownedUseCase>
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_msrp8KRuEeyAqaRHAzgpag" name="UC5A: Access to Readable API Documentation" subject="_JkAqoKRuEeyAqaRHAzgpag"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_MToSkKRuEeyAqaRHAzgpag" name="Service Purchase Interface" useCase="_QL1TMKRuEeyAqaRHAzgpag _TtfcEKRuEeyAqaRHAzgpag">
     <ownedUseCase xmi:type="uml:UseCase" xmi:id="_QL1TMKRuEeyAqaRHAzgpag" name="UC2P: Get API Access Token" subject="_MToSkKRuEeyAqaRHAzgpag">
