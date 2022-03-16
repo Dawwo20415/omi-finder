@@ -6,28 +6,28 @@
   <packagedElement xmi:type="uml:Actor" xmi:id="_lcdDEKRsEeyAqaRHAzgpag" name="Premium User"/>
   <packagedElement xmi:type="uml:Actor" xmi:id="_yEXl0KRsEeyAqaRHAzgpag" name="Database Server"/>
   <packagedElement xmi:type="uml:Activity" xmi:id="_3-DWAKRsEeyAqaRHAzgpag" name="Main Service" useCase="_8uLdIKRsEeyAqaRHAzgpag __DPQAKRsEeyAqaRHAzgpag _BSpt4KRtEeyAqaRHAzgpag _E9_XMKRtEeyAqaRHAzgpag _G7CSsKRtEeyAqaRHAzgpag _J0cIwKRtEeyAqaRHAzgpag _MLHFMKRtEeyAqaRHAzgpag _Oc3scKRtEeyAqaRHAzgpag">
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_8uLdIKRsEeyAqaRHAzgpag" name="Access to Organized OMI Data" subject="_3-DWAKRsEeyAqaRHAzgpag">
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_8uLdIKRsEeyAqaRHAzgpag" name="UC1: Access to Organized OMI Data" subject="_3-DWAKRsEeyAqaRHAzgpag">
       <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_geZYMKRtEeyAqaRHAzgpag" name="ExtensionPoint1"/>
       <include xmi:type="uml:Include" xmi:id="_iNn6IKRtEeyAqaRHAzgpag" addition="__DPQAKRsEeyAqaRHAzgpag"/>
       <include xmi:type="uml:Include" xmi:id="_jDB4IKRtEeyAqaRHAzgpag" addition="_E9_XMKRtEeyAqaRHAzgpag"/>
     </ownedUseCase>
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="__DPQAKRsEeyAqaRHAzgpag" name="Organize OMI Data" subject="_3-DWAKRsEeyAqaRHAzgpag">
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="__DPQAKRsEeyAqaRHAzgpag" name="UC7B: Organize OMI Data" subject="_3-DWAKRsEeyAqaRHAzgpag">
       <include xmi:type="uml:Include" xmi:id="_ioAJAKRtEeyAqaRHAzgpag" addition="_BSpt4KRtEeyAqaRHAzgpag"/>
     </ownedUseCase>
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_BSpt4KRtEeyAqaRHAzgpag" name="Download Raw OMI Data" subject="_3-DWAKRsEeyAqaRHAzgpag"/>
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_E9_XMKRtEeyAqaRHAzgpag" name="Access to Customized API" subject="_3-DWAKRsEeyAqaRHAzgpag">
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_BSpt4KRtEeyAqaRHAzgpag" name="UC8B: Download Raw OMI Data" subject="_3-DWAKRsEeyAqaRHAzgpag"/>
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_E9_XMKRtEeyAqaRHAzgpag" name="UC4A: Access to Customized API" subject="_3-DWAKRsEeyAqaRHAzgpag">
       <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_m2BBkKRtEeyAqaRHAzgpag" name="ExtensionPoint2"/>
       <include xmi:type="uml:Include" xmi:id="_jfcuYKRtEeyAqaRHAzgpag" addition="_J0cIwKRtEeyAqaRHAzgpag"/>
     </ownedUseCase>
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_G7CSsKRtEeyAqaRHAzgpag" name="Host Customized API" subject="_3-DWAKRsEeyAqaRHAzgpag">
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_G7CSsKRtEeyAqaRHAzgpag" name="UC6AB: Host Customized API" subject="_3-DWAKRsEeyAqaRHAzgpag">
       <extend xmi:type="uml:Extend" xmi:id="_m2AagKRtEeyAqaRHAzgpag" extendedCase="_E9_XMKRtEeyAqaRHAzgpag" extensionLocation="_m2BBkKRtEeyAqaRHAzgpag"/>
     </ownedUseCase>
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_J0cIwKRtEeyAqaRHAzgpag" name="Access to API Documentation" subject="_3-DWAKRsEeyAqaRHAzgpag"/>
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_MLHFMKRtEeyAqaRHAzgpag" name="User Authentication" subject="_3-DWAKRsEeyAqaRHAzgpag">
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_J0cIwKRtEeyAqaRHAzgpag" name="UC5A: Access to API Documentation" subject="_3-DWAKRsEeyAqaRHAzgpag"/>
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_MLHFMKRtEeyAqaRHAzgpag" name="UC2P: User Authentication" subject="_3-DWAKRsEeyAqaRHAzgpag">
       <extend xmi:type="uml:Extend" xmi:id="_geYxIKRtEeyAqaRHAzgpag" extendedCase="_8uLdIKRsEeyAqaRHAzgpag" extensionLocation="_geZYMKRtEeyAqaRHAzgpag"/>
       <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_f5DPcKRtEeyAqaRHAzgpag" name="ExtensionPoint1"/>
     </ownedUseCase>
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_Oc3scKRtEeyAqaRHAzgpag" name="Purchase of Service" subject="_3-DWAKRsEeyAqaRHAzgpag">
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_Oc3scKRtEeyAqaRHAzgpag" name="UC3P: Purchase of Service" subject="_3-DWAKRsEeyAqaRHAzgpag">
       <extend xmi:type="uml:Extend" xmi:id="_f5CoYKRtEeyAqaRHAzgpag" extendedCase="_MLHFMKRtEeyAqaRHAzgpag" extensionLocation="_f5DPcKRtEeyAqaRHAzgpag"/>
     </ownedUseCase>
   </packagedElement>
@@ -90,16 +90,16 @@
   <packagedElement xmi:type="uml:Actor" xmi:id="_Ag7gkKRuEeyAqaRHAzgpag" name="Freemium Users"/>
   <packagedElement xmi:type="uml:Actor" xmi:id="_CtL8wKRuEeyAqaRHAzgpag" name="External Geolocation API"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_JkAqoKRuEeyAqaRHAzgpag" name="Web Interface" useCase="_dNEU4KRuEeyAqaRHAzgpag _fCXCkKRuEeyAqaRHAzgpag _jhs7sKRuEeyAqaRHAzgpag _msrp8KRuEeyAqaRHAzgpag">
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_dNEU4KRuEeyAqaRHAzgpag" name="Check Data by Address" subject="_JkAqoKRuEeyAqaRHAzgpag"/>
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_fCXCkKRuEeyAqaRHAzgpag" name="Single Query Requests on Database" subject="_JkAqoKRuEeyAqaRHAzgpag"/>
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_jhs7sKRuEeyAqaRHAzgpag" name="Geolocation Integration" subject="_JkAqoKRuEeyAqaRHAzgpag"/>
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_msrp8KRuEeyAqaRHAzgpag" name="Access to Readable API Documentation" subject="_JkAqoKRuEeyAqaRHAzgpag"/>
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_dNEU4KRuEeyAqaRHAzgpag" name="UC9F: Check Data by Address" subject="_JkAqoKRuEeyAqaRHAzgpag"/>
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_fCXCkKRuEeyAqaRHAzgpag" name="UC10F: Single Query Requests on Database" subject="_JkAqoKRuEeyAqaRHAzgpag"/>
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_jhs7sKRuEeyAqaRHAzgpag" name="UC12E: Geolocation Integration" subject="_JkAqoKRuEeyAqaRHAzgpag"/>
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_msrp8KRuEeyAqaRHAzgpag" name="UC11F: Access to Readable API Documentation" subject="_JkAqoKRuEeyAqaRHAzgpag"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_MToSkKRuEeyAqaRHAzgpag" name="Service Purchase Interface" useCase="_QL1TMKRuEeyAqaRHAzgpag _TtfcEKRuEeyAqaRHAzgpag">
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_QL1TMKRuEeyAqaRHAzgpag" name="Get API Access Token" subject="_MToSkKRuEeyAqaRHAzgpag">
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_QL1TMKRuEeyAqaRHAzgpag" name="UC2P: Get API Access Token" subject="_MToSkKRuEeyAqaRHAzgpag">
       <extensionPoint xmi:type="uml:ExtensionPoint" xmi:id="_ZRIDwaRuEeyAqaRHAzgpag" name="ExtensionPoint1"/>
     </ownedUseCase>
-    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_TtfcEKRuEeyAqaRHAzgpag" name="Payment Service Redirect" subject="_MToSkKRuEeyAqaRHAzgpag">
+    <ownedUseCase xmi:type="uml:UseCase" xmi:id="_TtfcEKRuEeyAqaRHAzgpag" name="UC3P: Payment Service Redirect" subject="_MToSkKRuEeyAqaRHAzgpag">
       <extend xmi:type="uml:Extend" xmi:id="_ZRIDwKRuEeyAqaRHAzgpag" extendedCase="_QL1TMKRuEeyAqaRHAzgpag" extensionLocation="_ZRIDwaRuEeyAqaRHAzgpag"/>
     </ownedUseCase>
   </packagedElement>
