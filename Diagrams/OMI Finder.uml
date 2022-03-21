@@ -190,9 +190,6 @@
     <message xmi:type="uml:Message" xmi:id="_35D1AKkREeyOdtWHUeh1WQ" name="Resolution" messageSort="reply" receiveEvent="_35EcEakREeyOdtWHUeh1WQ" sendEvent="_35EcEKkREeyOdtWHUeh1WQ"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_idVd0KkSEeyOdtWHUeh1WQ" name="RF3 (Accesso alle API)">
-    <ownedRule xmi:type="uml:TimeConstraint" xmi:id="_i66RAKkaEeySh7P3t9nNgg" name="Time Constraint (1min)" constrainedElement="_FxHUgKkTEeyOdtWHUeh1WQ">
-      <specification xmi:type="uml:TimeInterval" xmi:id="_i697YKkaEeySh7P3t9nNgg"/>
-    </ownedRule>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_pArPAKkSEeyOdtWHUeh1WQ" name="Front-End" visibility="private" coveredBy="_FxHUgKkTEeyOdtWHUeh1WQ _xoC7MKkXEeyOdtWHUeh1WQ _Fxa2gakTEeyOdtWHUeh1WQ _RF5pMKkYEeyOdtWHUeh1WQ _RF4bEKkYEeyOdtWHUeh1WQ _TI1KQKkYEeyOdtWHUeh1WQ _TI1xUKkYEeyOdtWHUeh1WQ _lbwIAKkYEeyOdtWHUeh1WQ _lbvg8KkYEeyOdtWHUeh1WQ _1zvDEKkYEeyOdtWHUeh1WQ _1zvqIKkYEeyOdtWHUeh1WQ _SfcZkKkZEeyOdtWHUeh1WQ _etIecKkZEeyOdtWHUeh1WQ _etJFgKkZEeyOdtWHUeh1WQ _sk4RYKkZEeyOdtWHUeh1WQ _sk44cKkZEeyOdtWHUeh1WQ _rTSYkKkXEeyOdtWHUeh1WQ"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_ql-Y4KkSEeyOdtWHUeh1WQ" name="Back-End" coveredBy="_FxH7kKkTEeyOdtWHUeh1WQ _uMMcMKkTEeyOdtWHUeh1WQ _uMiacKkTEeyOdtWHUeh1WQ _fCvUUKkUEeyOdtWHUeh1WQ _fDWYUKkUEeyOdtWHUeh1WQ _Fxa2gKkTEeyOdtWHUeh1WQ _SfbygKkZEeyOdtWHUeh1WQ _XVqpAKkWEeyOdtWHUeh1WQ"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_rqMO8KkSEeyOdtWHUeh1WQ" name="Database" coveredBy="_uMMcMakTEeyOdtWHUeh1WQ _uMhzYakTEeyOdtWHUeh1WQ _fCv7YKkUEeyOdtWHUeh1WQ _fDVxQKkUEeyOdtWHUeh1WQ _uMfXIKkTEeyOdtWHUeh1WQ _fDSt8KkUEeyOdtWHUeh1WQ"/>

@@ -808,21 +808,11 @@
           <children xmi:type="notation:DecorationNode" xmi:id="_pA0Y8qkSEeyOdtWHUeh1WQ" type="Lifeline_NameLabel"/>
           <children xmi:type="notation:Shape" xmi:id="_RF_IwKkYEeyOdtWHUeh1WQ" type="ActionExecutionSpecification_Shape">
             <element xmi:type="uml:ActionExecutionSpecification" href="OMI%20Finder.uml#_RF4bEKkYEeyOdtWHUeh1WQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RF_IwakYEeyOdtWHUeh1WQ" x="40" y="421" width="20" height="60"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RF_IwakYEeyOdtWHUeh1WQ" x="40" y="426" width="20" height="60"/>
           </children>
           <children xmi:type="notation:Shape" xmi:id="_lb3cwKkYEeyOdtWHUeh1WQ" type="ActionExecutionSpecification_Shape">
             <element xmi:type="uml:ActionExecutionSpecification" href="OMI%20Finder.uml#_lbvg8KkYEeyOdtWHUeh1WQ"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lb3cwakYEeyOdtWHUeh1WQ" x="40" y="561" width="20" height="60"/>
-          </children>
-          <children xmi:type="notation:Shape" xmi:id="_i7PBIKkaEeySh7P3t9nNgg" type="TimeConstraint_Shape">
-            <children xmi:type="notation:DecorationNode" xmi:id="_i7Q2UKkaEeySh7P3t9nNgg" type="TimeConstraint_NameLabel">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_i7Q2UakaEeySh7P3t9nNgg" x="80" y="41"/>
-            </children>
-            <children xmi:type="notation:DecorationNode" xmi:id="_i7RdYKkaEeySh7P3t9nNgg" type="TimeConstraint_StereotypeLabel">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_i7RdYakaEeySh7P3t9nNgg" y="-22"/>
-            </children>
-            <element xmi:type="uml:TimeConstraint" href="OMI%20Finder.uml#_i66RAKkaEeySh7P3t9nNgg"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i7PBIakaEeySh7P3t9nNgg" x="20" y="21" width="60" height="941"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lb3cwakYEeyOdtWHUeh1WQ" x="40" y="566" width="20" height="60"/>
           </children>
           <element xmi:type="uml:Lifeline" href="OMI%20Finder.uml#_pArPAKkSEeyOdtWHUeh1WQ"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_pA0Y8akSEeyOdtWHUeh1WQ" x="54" y="10" height="1002"/>
@@ -953,9 +943,9 @@
       </children>
       <styles xmi:type="notation:FontStyle" xmi:id="_TJB-kakYEeyOdtWHUeh1WQ"/>
       <element xmi:type="uml:Message" href="OMI%20Finder.uml#_TIz8IKkYEeyOdtWHUeh1WQ"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TJB-kqkYEeyOdtWHUeh1WQ" points="[-1, 1, -1, 1]$[-1, 1, -1, 1]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TJSdQKkYEeyOdtWHUeh1WQ" id="(0.5,0.48003992015968067)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TJTEUKkYEeyOdtWHUeh1WQ" id="(0.5,0.5)"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_TJB-kqkYEeyOdtWHUeh1WQ" points="[0, 5, 0, -15]$[62, 5, 62, -15]$[62, 25, 62, 5]$[0, 25, 0, 5]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TJSdQKkYEeyOdtWHUeh1WQ" id="(0.5,0.48502994011976047)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_TJTEUKkYEeyOdtWHUeh1WQ" id="(0.5,0.5049900199600799)"/>
     </edges>
     <edges xmi:type="notation:Connector" xmi:id="_1z6pQKkYEeyOdtWHUeh1WQ" type="Message_SynchEdge" source="_pA0Y8KkSEeyOdtWHUeh1WQ" target="_pA0Y8KkSEeyOdtWHUeh1WQ">
       <children xmi:type="notation:DecorationNode" xmi:id="_1z6pQ6kYEeyOdtWHUeh1WQ" type="Message_SynchNameLabel">
