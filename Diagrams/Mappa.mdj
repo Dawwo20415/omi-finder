@@ -797,7 +797,7 @@
 													},
 													"font": "Arial;13;0",
 													"left": 385.1708984375,
-													"top": 245,
+													"top": 285,
 													"width": 186.8291015625,
 													"height": 13,
 													"text": ": ControlloIndirizzo(indirizzo)"
@@ -810,7 +810,7 @@
 													},
 													"font": "Arial;13;1",
 													"left": 349,
-													"top": 245,
+													"top": 285,
 													"width": 16.1708984375,
 													"height": 13,
 													"text": "ref"
@@ -818,7 +818,7 @@
 											],
 											"font": "Arial;13;0",
 											"left": 344,
-											"top": 240,
+											"top": 280,
 											"width": 233,
 											"height": 41,
 											"nameLabel": {
@@ -929,14 +929,14 @@
 													"left": 535,
 													"top": 80,
 													"width": 1,
-													"height": 177
+													"height": 217
 												}
 											],
 											"font": "Arial;13;0",
 											"left": 472,
 											"top": 40,
 											"width": 126.90087890625,
-											"height": 217,
+											"height": 257,
 											"nameCompartment": {
 												"$ref": "AAAAAAF/ve7X2gFZ48E="
 											},
@@ -962,7 +962,7 @@
 													},
 													"font": "Arial;13;0",
 													"left": 72.72998046875,
-													"top": 325,
+													"top": 245,
 													"width": 104.3271484375,
 													"height": 13,
 													"text": "Gestione indirizzo"
@@ -975,7 +975,7 @@
 													},
 													"font": "Arial;13;1",
 													"left": 53,
-													"top": 325,
+													"top": 245,
 													"width": 14.72998046875,
 													"height": 13,
 													"text": "alt"
@@ -1008,7 +1008,7 @@
 																	},
 																	"font": "Arial;13;0",
 																	"left": 68,
-																	"top": 358,
+																	"top": 278,
 																	"width": 60.71533203125,
 																	"height": 13,
 																	"text": "[code 200]"
@@ -1016,9 +1016,9 @@
 															],
 															"font": "Arial;13;0",
 															"left": 48,
-															"top": 343,
+															"top": 263,
 															"width": 721,
-															"height": 98,
+															"height": 178,
 															"guardLabel": {
 																"$ref": "AAAAAAF/vfGWtwHb/HU="
 															}
@@ -1059,16 +1059,16 @@
 													],
 													"font": "Arial;13;0",
 													"left": 48,
-													"top": 343,
+													"top": 263,
 													"width": 721,
-													"height": 298
+													"height": 378
 												}
 											],
 											"font": "Arial;13;0",
 											"left": 48,
-											"top": 320,
+											"top": 240,
 											"width": 721,
-											"height": 513,
+											"height": 593,
 											"nameLabel": {
 												"$ref": "AAAAAAF/vfGWrQHMRho="
 											},
