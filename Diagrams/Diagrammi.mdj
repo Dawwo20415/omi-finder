@@ -17,7 +17,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF/t1lH/PlXims="
 					},
-					"name": "Interaction1",
+					"name": "Registrazione",
 					"ownedElements": [
 						{
 							"_type": "UMLSequenceDiagram",
@@ -44,9 +44,9 @@
 												"$ref": "AAAAAAF/t1lH/vlaJZA="
 											},
 											"font": "Arial;13;0",
-											"left": 32.72998046875,
+											"left": 30.55908203125,
 											"top": 13,
-											"width": 80.4853515625,
+											"width": 72.474609375,
 											"height": 13,
 											"text": "Registrazione"
 										},
@@ -59,7 +59,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 13,
-											"width": 14.72998046875,
+											"width": 12.55908203125,
 											"height": 13,
 											"text": "sd"
 										}
@@ -1126,9 +1126,9 @@
 												"$ref": "AAAAAAF/t2fMs/rnFqA="
 											},
 											"font": "Arial;13;0",
-											"left": 72.72998046875,
+											"left": 71.99365234375,
 											"top": 317,
-											"width": 108.66259765625,
+											"width": 102.0546875,
 											"height": 13,
 											"text": "VerificaCredenziali"
 										},
@@ -1141,7 +1141,7 @@
 											"font": "Arial;13;1",
 											"left": 53,
 											"top": 317,
-											"width": 14.72998046875,
+											"width": 13.99365234375,
 											"height": 13,
 											"text": "alt"
 										},
@@ -1174,7 +1174,7 @@
 															"font": "Arial;13;0",
 															"left": 68,
 															"top": 350,
-															"width": 277.50048828125,
+															"width": 249.4375,
 															"height": 13,
 															"text": "[Nome utente o email già esistenti nel database]"
 														}
@@ -1207,7 +1207,7 @@
 															"font": "Arial;13;0",
 															"left": 68,
 															"top": 488,
-															"width": 282.572265625,
+															"width": 252.33203125,
 															"height": 13,
 															"text": "[Nome utente e email non esistono nel database]"
 														}
@@ -1490,9 +1490,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 91,
-											"top": 391,
+											"top": 397,
 											"width": 169,
-											"height": 39,
+											"height": 26,
 											"alpha": -1.5232136986310465,
 											"distance": 21.02379604162864,
 											"hostEdge": {
@@ -1828,9 +1828,9 @@
 											},
 											"font": "Arial;13;0",
 											"left": 87,
-											"top": 560,
+											"top": 567,
 											"width": 174.8779296875,
-											"height": 26,
+											"height": 13,
 											"alpha": -1.428899972190803,
 											"distance": 14.142135623730951,
 											"hostEdge": {
@@ -2163,7 +2163,7 @@
 					"_parent": {
 						"$ref": "AAAAAAF/t1lH/PlXims="
 					},
-					"name": "Interaction2",
+					"name": "API Calls",
 					"ownedElements": [
 						{
 							"_type": "UMLSequenceDiagram",
@@ -2275,9 +2275,9 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"left": -1278,
-													"width": 106.20263671875,
+													"width": 117.75537109375,
 													"height": 13,
-													"text": "(from Interaction1)"
+													"text": "(from Registrazione)"
 												},
 												{
 													"_type": "LabelView",
@@ -2391,9 +2391,9 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"left": -568,
-													"width": 106.20263671875,
+													"width": 117.75537109375,
 													"height": 13,
-													"text": "(from Interaction1)"
+													"text": "(from Registrazione)"
 												},
 												{
 													"_type": "LabelView",
@@ -2507,9 +2507,9 @@
 													"visible": false,
 													"font": "Arial;13;0",
 													"left": -512,
-													"width": 106.20263671875,
+													"width": 117.75537109375,
 													"height": 13,
-													"text": "(from Interaction1)"
+													"text": "(from Registrazione)"
 												},
 												{
 													"_type": "LabelView",
@@ -3796,9 +3796,9 @@
 												"$ref": "AAAAAAF/u3i3Z7/U7vY="
 											},
 											"font": "Arial;13;0",
-											"left": 32.72998046875,
+											"left": 30.55908203125,
 											"top": 13,
-											"width": 64.59716796875,
+											"width": 57.31005859375,
 											"height": 13,
 											"text": "Homepage"
 										},
@@ -3811,7 +3811,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 13,
-											"width": 14.72998046875,
+											"width": 12.55908203125,
 											"height": 13,
 											"text": "sd"
 										}
@@ -4637,9 +4637,9 @@
 												"$ref": "AAAAAAF/u4mj8MGxCvA="
 											},
 											"font": "Arial;13;0",
-											"left": 320.72998046875,
+											"left": 319.99365234375,
 											"top": 301,
-											"width": 55.92626953125,
+											"width": 50.82275390625,
 											"height": 13,
 											"text": "soluzione"
 										},
@@ -4652,7 +4652,7 @@
 											"font": "Arial;13;1",
 											"left": 301,
 											"top": 301,
-											"width": 14.72998046875,
+											"width": 13.99365234375,
 											"height": 13,
 											"text": "alt"
 										},
@@ -4685,7 +4685,7 @@
 															"font": "Arial;13;0",
 															"left": 316,
 															"top": 334,
-															"width": 72.287109375,
+															"width": 67.361328125,
 															"height": 13,
 															"text": "[code==404]"
 														}
@@ -4718,7 +4718,7 @@
 															"font": "Arial;13;0",
 															"left": 316,
 															"top": 456,
-															"width": 31.07177734375,
+															"width": 28.869140625,
 															"height": 13,
 															"text": "[else]"
 														}
@@ -4772,9 +4772,9 @@
 												"$ref": "AAAAAAF/u5Gb9sLWQpc="
 											},
 											"font": "Arial;13;0",
-											"left": 328.72998046875,
+											"left": 327.99365234375,
 											"top": 549,
-											"width": 105.04443359375,
+											"width": 96.66552734375,
 											"height": 13,
 											"text": "post recuperoOMI"
 										},
@@ -4787,7 +4787,7 @@
 											"font": "Arial;13;1",
 											"left": 309,
 											"top": 549,
-											"width": 14.72998046875,
+											"width": 13.99365234375,
 											"height": 13,
 											"text": "alt"
 										},
