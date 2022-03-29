@@ -63,9 +63,9 @@
 												"$ref": "AAAAAAF/smrBhWQ33QM="
 											},
 											"font": "Arial;13;0",
-											"left": 184.72998046875,
+											"left": 183.99365234375,
 											"top": 309,
-											"width": 67.49169921875,
+											"width": 58.763671875,
 											"height": 13,
 											"text": "Pagamento"
 										},
@@ -78,7 +78,7 @@
 											"font": "Arial;13;1",
 											"left": 165,
 											"top": 309,
-											"width": 14.72998046875,
+											"width": 13.99365234375,
 											"height": 13,
 											"text": "alt"
 										},
@@ -130,9 +130,9 @@
 												"$ref": "AAAAAAF/slHK7GFzM7A="
 											},
 											"font": "Arial;13;0",
-											"left": 144.72998046875,
+											"left": 142.55908203125,
 											"top": 13,
-											"width": 67.49169921875,
+											"width": 58.763671875,
 											"height": 13,
 											"text": "Pagamento"
 										},
@@ -145,7 +145,7 @@
 											"font": "Arial;13;1",
 											"left": 125,
 											"top": 13,
-											"width": 14.72998046875,
+											"width": 12.55908203125,
 											"height": 13,
 											"text": "sd"
 										}
@@ -2383,9 +2383,9 @@
 												"$ref": "AAAAAAF/vBAwxmCqk34="
 											},
 											"font": "Arial;13;0",
-											"left": 559.83544921875,
+											"left": 559.08642578125,
 											"top": 325,
-											"width": 104.3525390625,
+											"width": 94.50732421875,
 											"height": 13,
 											"text": "Salvataggio token"
 										},
@@ -2398,7 +2398,7 @@
 											"font": "Arial;13;1",
 											"left": 517,
 											"top": 325,
-											"width": 37.83544921875,
+											"width": 37.08642578125,
 											"height": 13,
 											"text": "critical"
 										},
@@ -3398,7 +3398,7 @@
 									"font": "Arial;13;0",
 									"left": 160,
 									"top": 216,
-									"width": 273,
+									"width": 297,
 									"height": 321,
 									"nameLabel": {
 										"$ref": "AAAAAAF/spCbwmea1pY="
@@ -3556,15 +3556,15 @@
 											"font": "Arial;13;0",
 											"left": 318,
 											"top": 368,
-											"width": 99.34716796875,
+											"width": 114.537109375,
 											"height": 13,
-											"alpha": 0.8029393957625124,
-											"distance": 40.311288741492746,
+											"alpha": 0.9229840299188674,
+											"distance": 46.400431032480725,
 											"hostEdge": {
 												"$ref": "AAAAAAF/spLReWfuJqE="
 											},
 											"edgePosition": 1,
-											"text": "4 : Indirizzo = res"
+											"text": "4 : Coordinate = res"
 										},
 										{
 											"_type": "EdgeLabelView",
@@ -3841,7 +3841,7 @@
 							"target": {
 								"$ref": "AAAAAAF/so6DS2cgklI="
 							},
-							"assignmentTarget": "Indirizzo"
+							"assignmentTarget": "Coordinate"
 						},
 						{
 							"_type": "UMLMessage",
@@ -6677,9 +6677,9 @@
 												"$ref": "AAAAAAF/u/+IZF33P9w="
 											},
 											"font": "Arial;13;0",
-											"left": 32.72998046875,
+											"left": 30.55908203125,
 											"top": 13,
-											"width": 123.85888671875,
+											"width": 110.73828125,
 											"height": 13,
 											"text": "Registrazione_utente"
 										},
@@ -6692,7 +6692,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 13,
-											"width": 14.72998046875,
+											"width": 12.55908203125,
 											"height": 13,
 											"text": "sd"
 										}
@@ -8194,9 +8194,9 @@
 												"$ref": "AAAAAAF/vAXneV/A6i0="
 											},
 											"font": "Arial;13;0",
-											"left": 56.72998046875,
+											"left": 55.99365234375,
 											"top": 461,
-											"width": 86.26806640625,
+											"width": 80.78369140625,
 											"height": 13,
 											"text": "controllo query"
 										},
@@ -8209,7 +8209,7 @@
 											"font": "Arial;13;1",
 											"left": 37,
 											"top": 461,
-											"width": 14.72998046875,
+											"width": 13.99365234375,
 											"height": 13,
 											"text": "alt"
 										},
@@ -9318,9 +9318,9 @@
 												"$ref": "AAAAAAF/vBPf2WDKWBk="
 											},
 											"font": "Arial;13;0",
-											"left": 32.72998046875,
+											"left": 30.55908203125,
 											"top": 13,
-											"width": 32.80810546875,
+											"width": 32.052734375,
 											"height": 13,
 											"text": "Login"
 										},
@@ -9333,7 +9333,7 @@
 											"font": "Arial;13;1",
 											"left": 13,
 											"top": 13,
-											"width": 14.72998046875,
+											"width": 12.55908203125,
 											"height": 13,
 											"text": "sd"
 										}
@@ -10722,9 +10722,9 @@
 												"$ref": "AAAAAAF/vBxiA2JqkCI="
 											},
 											"font": "Arial;13;0",
-											"left": 56.72998046875,
+											"left": 55.99365234375,
 											"top": 405,
-											"width": 86.26806640625,
+											"width": 80.78369140625,
 											"height": 13,
 											"text": "controllo query"
 										},
@@ -10737,7 +10737,7 @@
 											"font": "Arial;13;1",
 											"left": 37,
 											"top": 405,
-											"width": 14.72998046875,
+											"width": 13.99365234375,
 											"height": 13,
 											"text": "alt"
 										},
@@ -11874,9 +11874,9 @@
 												"$ref": "AAAAAAF/vC404GNgcvY="
 											},
 											"font": "Arial;13;0",
-											"left": 40.72998046875,
+											"left": 38.55908203125,
 											"top": 13,
-											"width": 85.54443359375,
+											"width": 80.7900390625,
 											"height": 13,
 											"text": "Download Dati"
 										},
@@ -11889,7 +11889,7 @@
 											"font": "Arial;13;1",
 											"left": 21,
 											"top": 13,
-											"width": 14.72998046875,
+											"width": 12.55908203125,
 											"height": 13,
 											"text": "sd"
 										}
@@ -12268,9 +12268,9 @@
 												"$ref": "AAAAAAF/vC8ePWPTXGM="
 											},
 											"font": "Arial;13;0",
-											"left": 99.578125,
+											"left": 98.11181640625,
 											"top": 109,
-											"width": 89.16259765625,
+											"width": 84.0400390625,
 											"height": 13,
 											"text": "Download_Dati"
 										},
@@ -12283,7 +12283,7 @@
 											"font": "Arial;13;1",
 											"left": 69,
 											"top": 109,
-											"width": 25.578125,
+											"width": 24.11181640625,
 											"height": 13,
 											"text": "loop"
 										},
@@ -12459,9 +12459,9 @@
 												"$ref": "AAAAAAF/vDDNl2QRzJ8="
 											},
 											"font": "Arial;13;0",
-											"left": 115.578125,
+											"left": 114.11181640625,
 											"top": 221,
-											"width": 57.3544921875,
+											"width": 54.06640625,
 											"height": 13,
 											"text": "zone OMI"
 										},
@@ -12474,7 +12474,7 @@
 											"font": "Arial;13;1",
 											"left": 85,
 											"top": 221,
-											"width": 25.578125,
+											"width": 24.11181640625,
 											"height": 13,
 											"text": "loop"
 										},
