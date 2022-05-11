@@ -61,7 +61,7 @@
 											"font": "Arial;13;3",
 											"left": 1133,
 											"top": 687,
-											"width": 108.74169921875,
+											"width": 115.62255859375,
 											"height": 13,
 											"text": "Utente"
 										},
@@ -96,7 +96,7 @@
 									"font": "Arial;13;0",
 									"left": 1128,
 									"top": 680,
-									"width": 118.74169921875,
+									"width": 125.62255859375,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGAHluhdLxt+xU="
@@ -133,7 +133,7 @@
 											"font": "Arial;13;0",
 											"left": 1133,
 											"top": 710,
-											"width": 108.74169921875,
+											"width": 115.62255859375,
 											"height": 13,
 											"text": "+userName: String",
 											"horizontalAlignment": 0
@@ -150,16 +150,16 @@
 											"font": "Arial;13;0",
 											"left": 1133,
 											"top": 725,
-											"width": 108.74169921875,
+											"width": 115.62255859375,
 											"height": 13,
-											"text": "-password: String",
+											"text": "-salted_hash: String",
 											"horizontalAlignment": 0
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 1128,
 									"top": 705,
-									"width": 118.74169921875,
+									"width": 125.62255859375,
 									"height": 38
 								},
 								{
@@ -174,7 +174,7 @@
 									"font": "Arial;13;0",
 									"left": 1128,
 									"top": 743,
-									"width": 118.74169921875,
+									"width": 125.62255859375,
 									"height": 10
 								},
 								{
@@ -214,7 +214,7 @@
 							"containerChangeable": true,
 							"left": 1128,
 							"top": 680,
-							"width": 118.74169921875,
+							"width": 125.62255859375,
 							"height": 129,
 							"nameCompartment": {
 								"$ref": "AAAAAAGAHluhdLxsTJU="
@@ -543,7 +543,7 @@
 								"$ref": "AAAAAAGAHlwa2bzPQ0I="
 							},
 							"lineStyle": 1,
-							"points": "1104:935;1104:872;1184:872;1185:809",
+							"points": "1104:935;1104:872;1184:872;1187:809",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGAHlwa6bz5cpA="
@@ -813,7 +813,7 @@
 								"$ref": "AAAAAAGAHl/pGL1GMI4="
 							},
 							"lineStyle": 1,
-							"points": "1264:935;1264:872;1184:872;1185:809",
+							"points": "1264:935;1264:872;1184:872;1187:809",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGAHl/pL71wVIU="
@@ -2388,7 +2388,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1272,
+									"left": 1279,
 									"top": 723,
 									"height": 13,
 									"alpha": 0.5235987755982988,
@@ -2409,7 +2409,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 1275,
+									"left": 1282,
 									"top": 709,
 									"height": 13,
 									"alpha": 0.7853981633974483,
@@ -2429,7 +2429,7 @@
 										"$ref": "AAAAAAGAIJ8oK+mXGso="
 									},
 									"font": "Arial;13;0",
-									"left": 1265,
+									"left": 1272,
 									"top": 750,
 									"width": 7.22998046875,
 									"height": 13,
@@ -2543,7 +2543,7 @@
 								"$ref": "AAAAAAGAHluhdLxrvAI="
 							},
 							"lineStyle": 1,
-							"points": "1247:744;1376:744;1376:649",
+							"points": "1254:744;1376:744;1376:649",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGAIJ8oK+mbymg="
@@ -3742,7 +3742,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGAHluhc7xpGFo="
 							},
-							"name": "password",
+							"name": "salted_hash",
 							"visibility": "private",
 							"type": "String"
 						}
