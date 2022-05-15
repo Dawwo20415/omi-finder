@@ -5,9 +5,9 @@
     "engines": {
         "node": "16.x"
     },
-    "main": "start.js",
+    "main": "Software/FrontEnd/start.js",
     "scripts": {
-        "start": "node start.js"
+        "start": "node Software/FrontEnd/start.js"
     },
     "author": "Dawwo-15",
     "license": "MIT",
