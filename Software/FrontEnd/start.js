@@ -16,6 +16,10 @@ web_interface.get( "/", (req, res) => {
     res.send("<h1>Homepage</h1>")
 })
 
+web_interface.get( "/testpage", (req, res) => {
+    res.send("<h1>Atlas Test Page</h1>")
+})
+
 //Dire ad espress su quale porta ascoltare le richieste
 //Con aggiunta funzione che lo dichiara sulla console
 web_interface.listen(PORT, () => console.log(`Listening on ${ PORT }`)) 
