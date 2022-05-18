@@ -1,0 +1,8 @@
+@use "../../colors";
+@use "../../fonts";
+
+.ApiHeader {
+	color: colors.$white3;
+	font-family: fonts.$Roboto;
+	font-size: 26px;
+}

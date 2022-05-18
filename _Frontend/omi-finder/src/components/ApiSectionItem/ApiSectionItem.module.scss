@@ -1,0 +1,61 @@
+@use "../../colors";
+@use "../../fonts";
+@use "sass:math" as math;
+
+.ApiSectionItem {
+	$height: 38px;
+	$active-color: lighten(colors.$cyan, 25%);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: $height;
+
+	cursor: pointer;
+
+	&.active {
+		background-color: colors.$black;
+
+		& > .Text {
+			font-weight: bold;
+			color: $active-color;
+		}
+
+		& > svg > .Dot {
+			fill: $active-color;
+			stroke: $active-color;
+		}
+	}
+
+	&:hover {
+		background-color: colors.$grey4;
+	}
+
+	&:active {
+		background-color: colors.$grey3;
+	}
+
+	&:focus {
+		outline: 1px solid colors.$cyan;
+	}
+
+	& > .Text {
+		line-height: $height;
+		color: colors.$white3;
+		font-family: fonts.$Roboto;
+		font-size: 18px;
+		font-weight: lighter;
+	}
+
+	& > svg {
+		width: math.div($height, 2);
+		height: $height;
+
+		& > .Dot {
+			stroke: colors.$white3;
+			stroke-width: 6;
+			fill: none;
+		}
+	}
+}

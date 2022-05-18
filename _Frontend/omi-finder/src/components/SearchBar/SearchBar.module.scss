@@ -1,0 +1,73 @@
+@use "../../colors";
+@use "../../fonts";
+@use "sass:math" as math;
+
+.SearchBar {
+	$height: 55px;
+	display: grid;
+	grid-template-columns: 1fr $height;
+	width: 350px;
+	height: $height;
+
+	& > .SearchBarInput {
+		display: block;
+		width: 100%;
+		height: 100%;
+		padding: 0 math.div($height, 2);
+		border: 1px solid #0000;
+		border-top-left-radius: math.div($height, 2);
+		border-bottom-left-radius: math.div($height, 2);
+		outline: 0;
+		background-color: colors.$grey3;
+
+		color: colors.$white3;
+		font-family: fonts.$Roboto;
+		font-size: 20px;
+
+		&::placeholder {
+			color: colors.$white2;
+			font-family: fonts.$Roboto;
+			font-size: 18px;
+		}
+
+		&:focus {
+			border-color: colors.$cyan;
+		}
+	}
+
+	& > .SearchBarButton {
+		width: 100%;
+		height: 100%;
+		background-color: colors.$grey3;
+		border: 1px solid #0000;
+		border-top-right-radius: math.div($height, 2);
+		border-bottom-right-radius: math.div($height, 2);
+		outline: 0;
+		cursor: pointer;
+
+		& > svg {
+			width: 100%;
+			height: 100%;
+
+			& > path {
+				fill: none;
+				stroke: colors.$white3;
+				stroke-width: 8;
+				stroke-linecap: round;
+				stroke-linejoin: round;
+			}
+		}
+
+		&:hover {
+			background-color: colors.$white1;
+		}
+
+		&:active {
+			background-color: colors.$grey4;
+		}
+
+		&:focus {
+			border-color: colors.$cyan;
+		}
+	}
+}

@@ -1,11 +1,46 @@
+@use "./colors";
+
 *,
 *::before,
 *::after {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	border: 0;
+}
+
+html,
+body,
+#root {
+	height: 100%;
 }
 
 body {
-	background-color: #333;
+	background-color: colors.$black;
+}
+
+#root {
+	display: grid;
+	grid-template-rows: 60px 1fr;
+}
+
+// Removes an “X” from all text input fields in IE
+input[type="text"]::-ms-clear {
+	display: none;
+	width: 0;
+	height: 0;
+}
+input[type="text"]::-ms-reveal {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+// Removes an "X" that deletes the entire input field content
+// from search inputs in Chrome and IE
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	display: none;
 }

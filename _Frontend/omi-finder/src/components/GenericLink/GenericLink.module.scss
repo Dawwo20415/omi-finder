@@ -1,0 +1,9 @@
+@use "../../colors";
+@use "../../fonts";
+
+.GenericLink {
+	color: colors.$cyan;
+	font-family: fonts.$Roboto;
+	font-size: 18px;
+	text-decoration: underline;
+}

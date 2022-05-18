@@ -1,0 +1,21 @@
+@use "../../colors";
+@use "../../fonts";
+
+.LoginAndRegisterDescription {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 480px;
+	height: 100%;
+
+	& > .Description {
+		display: block;
+		margin: 5px 0;
+		color: colors.$white3;
+		font-family: fonts.$Roboto;
+		font-size: 26px;
+		font-weight: lighter;
+		line-height: 30px;
+		user-select: none;
+	}
+}

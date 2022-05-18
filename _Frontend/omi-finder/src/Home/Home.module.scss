@@ -1,0 +1,36 @@
+@use "../colors";
+@use "../fonts";
+
+.Home {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+	font-family: fonts.$Roboto;
+	height: 100%;
+
+	& > .LogoContainer {
+		position: absolute;
+		left: 30px;
+		top: 20px;
+	}
+
+	& > .SearchBarContainer {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		& > * {
+			margin: 10px;
+		}
+
+		& > .SearchBarDescription {
+			font-family: fonts.$Roboto;
+			font-size: 14px;
+			color: colors.$white3;
+			user-select: none;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+@use "../../colors";
+@use "../../fonts";
+
+.LoginAndRegisterSubmitButton {
+	display: block;
+	width: 200px;
+	height: 50px;
+	border-radius: 7px;
+	outline: 0;
+
+	background-color: colors.$cyan;
+	font-family: fonts.$Roboto;
+	font-size: 22px;
+	color: colors.$white3;
+
+	&:hover {
+		background-color: darken(colors.$cyan, 10%);
+	}
+
+	&:active {
+		background-color: darken(colors.$cyan, 5%);
+	}
+
+	&:focus {
+		outline: 1px solid colors.$white3;
+	}
+}
