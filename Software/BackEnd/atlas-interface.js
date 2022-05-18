@@ -1,10 +1,13 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 main().catch(err => console.log(err));
 
 async function main() {
 
-    mongoose.connect('mongodb+srv://<user>:<password>@omifinder.brexx.mongodb.net/OmiFinder?retryWrites=true&w=majority');
+    const uri = 'mongodb+srv://' + process.env.USER + ':' + process.env.PASSWORD + '@omifinder.brexx.mongodb.net/OmiFinder?retryWrites=true&w=majority'; 
+    console.log(uri); 
+    mongoose.connect(uri);
 
     const omi_zone_schema = new mongoose.Schema({
         provincia : String,
@@ -33,6 +36,6 @@ async function main() {
 
     const zona = await ZoneOmi.find();
 
-    console.log(zona.valori);
+    console.log(zona);
 }
 

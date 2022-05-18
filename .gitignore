@@ -1,3 +1,4 @@
 .~lock.*
 Passwords.txt
 node_modules
+.env

@@ -7,7 +7,8 @@
     },
     "main": "Software/FrontEnd/start.js",
     "scripts": {
-        "start": "node Software/FrontEnd/start.js"
+        "start": "node Software/FrontEnd/start.js",
+        "connect": "node Software/BackEnd/atlas-interface.js"
     },
     "author": "Dawwo-15",
     "license": "MIT",
@@ -15,5 +16,8 @@
         "express": "^4.18.1",
         "mongodb": "^4.6.0",
         "mongoose": "^6.3.3"
+    },
+    "devDependencies": {
+        "dotenv": "^16.0.1"
     }
 }
