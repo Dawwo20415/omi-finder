@@ -1,26 +1,9 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-//main().catch(err => console.log(err));
-
-/*
-async function main() {
-
-    const zona = dbConnectionSetup();
-
-    console.log(await api_test_function(zona));
-
-    mongoose.disconnect();
-
-    process.exit();
-}
-*/
-
 async function query (model, filter, projection) {
-
     //Execute Query
     result = await model.find(filter, projection);
-
     return result;
 }
 
@@ -61,7 +44,6 @@ module.exports = {
 
     api_test_function : async function (model) {
         const result = await query(model, {provincia:"VR"}, '-coordinate');
-    
         return result;
     }
 }

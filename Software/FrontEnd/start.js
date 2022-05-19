@@ -25,7 +25,6 @@ web_interface.get( "/testpage", (req, res) => {
 
 web_interface.get( "/v1/testcommand", async (req, res) => {
     const result = await custom_api.api_test_function(zona)
-    console.log(result)
     res.json(result)
 })
 
