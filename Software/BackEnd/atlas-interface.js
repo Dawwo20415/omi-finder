@@ -3,7 +3,17 @@ const mongoose = require('mongoose');
 
 async function query (model, filter, projection) {
     //Execute Query
-    result = await model.find(filter, projection);
+    result = await model.find(filter, projection).lean();
+    result = JSON.stringify(result);
+    result = JSON.parse(result);
+    return result;
+}
+
+async function query_limitata (model, filter) {
+    //Execute Query
+    result = await model.find(filter).lean();
+    result = JSON.stringify(result);
+    result = JSON.parse(result);
     return result;
 }
 
@@ -44,6 +54,21 @@ module.exports = {
 
     api_test_function : async function (model) {
         const result = await query(model, {provincia:"VR"}, '-coordinate');
+        return result;
+    },
+
+    api_get_list : async function (model, filter) {
+        const result = await query(model, {}, filter);
+        return result;
+    },
+
+    api_get_query : async function (model, parameter) {
+        const result = await query_limitata(model, parameter);
+        return result;
+    },
+
+    api_get_query_completa : async function (model, parameters, filter) {
+        const result = await query(model, parameters, filter);
         return result;
     }
 }
