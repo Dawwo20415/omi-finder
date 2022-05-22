@@ -71,6 +71,14 @@ web_interface.get( '/v1/utilizzo/:tipo', async (req, res) => {
         }
     }
 
+    for (r in result) {
+        console.log("Primo For - " + result.length + " - " + r);
+        for (p in req.query) {
+            console.log("Secondo For - " + p);
+            result[r] = result[r][p];
+        }
+    }
+    
     res.json(result)
 })
 
