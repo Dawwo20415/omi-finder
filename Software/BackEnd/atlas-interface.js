@@ -32,8 +32,19 @@ async function query(model, filter, projection = '', limit = 0) {
     return result;
 }
 
+async function aggregation(model, filter, group_layout) {
+    var result = {};
+
+    result = await model.aggregate([
+        {$match: filter},
+        {$group: group_layout}
+    ]);
+
+    return result;
+}
+
 //Exports ---------------------------------------------
-module.exports = {atlasConnectionSetup, query};
+module.exports = {atlasConnectionSetup, query, aggregation};
 
 
 

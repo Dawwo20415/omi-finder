@@ -11,10 +11,14 @@ async function main() {
 
     custom_api.atlasConnectionSetup();
 
-    var result = await custom_api.query(zona_omi.model, {}, 'comune', 20);
-    result = await custom_api.query(zona_omi.model, {}, 'provincia', 20);
+    result = await custom_api.query(zona_omi.model, {'comune':'TRENTO','valori.semestre' : '20212'}, 'valori');
 
     console.log(result);
+    console.log('----------------------------------------');
+
+    //result = await custom_api.aggregation(zona_omi.model, {"provincia": "TN"}, {_id:'$comune', valore:{$sum : "$codice_catasto"}});
+
+    //console.log(result);
 
     process.exit();
 }
