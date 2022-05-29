@@ -3,6 +3,7 @@ const express = require("express");
 const custom_api = require("../BackEnd/atlas-interface.js");
 const Iapi = require("../BackEnd/api-interface.js");
 const zona_omi = require("../BackEnd/zona-omi-definition.js");
+const utente = require("../BackEnd/utente-definition.js");
 
 //Definisce la porta su cui ascoltare | Heroku RICHIEDE la porta 5000
 const PORT = process.env.PORT || 5000;
