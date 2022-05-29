@@ -21,8 +21,8 @@ const zona = custom_api.atlasConnectionSetup();
 // "/" indica che è la homepage del sito
 // Inserire /[qualcosa] si riferisce a quella pagina
 web_interface.get("/", (req, res) => {
-	//res.sendFile(__dirname + '/omi-finder/build/index.html');
-    res.json({homepage:"This is it"});
+	res.sendFile(__dirname + '/omi-finder/build/index.html');
+    //res.send("<h1>Homepage</h1>");
 });
 
 web_interface.get("/v2/getBy/:filter", async (req, res) => {
