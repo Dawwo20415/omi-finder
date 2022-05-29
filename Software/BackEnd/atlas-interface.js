@@ -5,13 +5,17 @@ const mongoose = require('mongoose');
 function atlasConnectionSetup() {
     const uri = 'mongodb+srv://' + process.env.USER + ':' + process.env.PASSWORD + '@omifinder.brexx.mongodb.net/OmiFinder?retryWrites=true&w=majority'; 
     console.log('Attempting to connect to [' + uri +']');
+    var outcome = uri;
 
     mongoose.connect(uri, (err) => {
         if (err) {
-            console.log(err);
+            outcome = "Error";
+        } else {
+            outcome = "Connected";
         }
-        console.log("Connecting...");
     });
+
+    return mongoose.connection.readyState;
 }
 
 async function query(model, filter, projection = '', limit = 0) {

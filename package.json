@@ -8,7 +8,8 @@
     "main": "Software/FrontEnd/start.js",
     "scripts": {
         "start": "node Software/FrontEnd/start.js",
-        "atlas-connection": "node Software/BackEnd/testing/test-atlas-connection.js"
+        "atlas-connection": "node Software/BackEnd/testing/test-atlas-connection.js",
+        "test": "jest"
     },
     "author": "Dawwo-15",
     "license": "MIT",
@@ -18,6 +19,7 @@
         "mongoose": "^6.3.4"
     },
     "devDependencies": {
-        "dotenv": "^16.0.1"
+        "dotenv": "^16.0.1",
+        "jest": "^28.1.0"
     }
 }
