@@ -2,14 +2,12 @@ const { query } = require('express');
 const mongoose = require('mongoose');
 const Iatlas = require('../atlas-interface.js');
 const zona_omi = require('../zona-omi-definition.js');
-let conn;
+let time_out = 10000;
 
 beforeAll(async () => {
-    //const uri = 'mongodb+srv://' + process.env.USER + ':' + process.env.PASSWORD + '@omifinder.brexx.mongodb.net/OmiFinder?retryWrites=true&w=majority';
-    //await mongoose.connect(uri);
     
    await Iatlas.atlasConnectionSetup();
-});
+}, time_out);
 
 afterAll(async () => {
     await Iatlas.disconnect();

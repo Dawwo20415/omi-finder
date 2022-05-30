@@ -9,7 +9,6 @@ async function atlasConnectionSetup() {
 
     await new Promise((resolve, reject) => {
         mongoose.connect(uri, (err) => {
-            console.log("Arrivatoooo0");
             if (err) {
                 reject(err);
                 
