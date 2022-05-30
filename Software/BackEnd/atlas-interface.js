@@ -2,19 +2,28 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 //Communication mongoose-atlas -------------------------------------------------
-function atlasConnectionSetup() {
+async function atlasConnectionSetup() {
     const uri = 'mongodb+srv://' + process.env.USER + ':' + process.env.PASSWORD + '@omifinder.brexx.mongodb.net/OmiFinder?retryWrites=true&w=majority'; 
     console.log('Attempting to connect to [' + uri +']');
     var outcome = uri;
 
-    mongoose.connect(uri, (err) => {
-        if (err) {
-            outcome = "Error";
-        } else {
-            outcome = "Connected";
-        }
-    });
+    await new Promise((resolve, reject) => {
+        mongoose.connect(uri, (err) => {
+            console.log("Arrivatoooo0");
+            if (err) {
+                reject(err);
+                
+            } else {
+                resolve("Connected");
+            }
+        });
+    }); 
 
+    return mongoose.connection.readyState;
+}
+
+async function disconnect() {
+    await mongoose.disconnect();
     return mongoose.connection.readyState;
 }
 
@@ -48,7 +57,7 @@ async function aggregation(model, filter, group_layout) {
 }
 
 //Exports ---------------------------------------------
-module.exports = {atlasConnectionSetup, query, aggregation};
+module.exports = {atlasConnectionSetup, disconnect, query, aggregation};
 
 
 
