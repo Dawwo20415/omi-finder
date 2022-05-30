@@ -7,9 +7,11 @@
     },
     "main": "Software/FrontEnd/web.js",
     "scripts": {
-        "start": "node Software/FrontEnd/web.js",
+        "start2": "node Software/FrontEnd/web.js",
+        "start": "cd Software/FrontEnd/omi-finder && npm run build && cd .. && node web.js",
         "atlas-connection": "node Software/BackEnd/testing/test-atlas-connection.js",
-        "test": "jest"
+        "test": "jest",
+        "delete-build" : "rmdir Software\\FrontEnd\\build /s /q"
     },
     "author": "Dawwo-15",
     "license": "MIT",
