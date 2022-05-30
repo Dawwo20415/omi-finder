@@ -5,9 +5,9 @@
     "engines": {
         "node": "16.x"
     },
-    "main": "Software/FrontEnd/start.js",
+    "main": "Software/FrontEnd/web.js",
     "scripts": {
-        "start": "node Software/FrontEnd/start.js",
+        "start": "node Software/FrontEnd/web.js",
         "atlas-connection": "node Software/BackEnd/testing/test-atlas-connection.js",
         "test": "jest"
     },
