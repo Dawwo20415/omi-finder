@@ -7,7 +7,7 @@
     },
     "main": "Software/FrontEnd/web.js",
     "scripts": {
-        "start": "node web.js",
+        "start": "node Software/FrontEnd/web.js",
         "test": "jest",
         "build" : "cd Software/FrontEnd/omi-finder && npm install && npm run build && cd .. ",
         "heroku-postbuild":"npm run build",
