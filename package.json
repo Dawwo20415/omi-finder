@@ -7,9 +7,8 @@
     },
     "main": "Software/FrontEnd/web.js",
     "scripts": {
-        "start2": "node Software/FrontEnd/web.js",
+        "prepare": "cd Software/FrontEnd/omi-finder && npm install && npm run build && cd .. ",
         "start": "cd Software/FrontEnd/omi-finder && npm install && npm run build && cd .. && node web.js",
-        "atlas-connection": "node Software/BackEnd/testing/test-atlas-connection.js",
         "test": "jest",
         "delete-build" : "rmdir Software\\FrontEnd\\build /s /q"
     },
