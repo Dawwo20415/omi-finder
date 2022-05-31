@@ -5,10 +5,13 @@
     "engines": {
         "node": "16.x"
     },
-    "main": "Software/FrontEnd/start.js",
+    "main": "Software/FrontEnd/web.js",
     "scripts": {
-        "start": "node Software/FrontEnd/start.js",
-        "atlas-connection": "node Software/BackEnd/testing/test-atlas-connection.js"
+        "start": "node Software/FrontEnd/web.js",
+        "test": "jest",
+        "build" : "cd Software/FrontEnd/omi-finder && npm install && npm run build && cd .. ",
+        "heroku-postbuild":"npm run build",
+        "delete-build" : "rmdir Software\\FrontEnd\\build /s /q"
     },
     "author": "Dawwo-15",
     "license": "MIT",
@@ -18,6 +21,7 @@
         "mongoose": "^6.3.4"
     },
     "devDependencies": {
-        "dotenv": "^16.0.1"
+        "dotenv": "^16.0.1",
+        "jest": "^28.1.0"
     }
 }
