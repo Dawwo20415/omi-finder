@@ -33,7 +33,7 @@ app.get("/v2/getTipo/:settore/:tipo/:filter", async (req, res) => {
 });
 
 app.post('/v2/userGetStatus/', urlencodedParser, async (req, res) => {
-	res.json(await Iapi.userGetStatus(req.body.id, Utente))
+	res.json(await Iapi.userGetStatus(req.body.id, Utente));
 })
 
 app.put('/v2/register/', urlencodedParser, async (req, res) => {
