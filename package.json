@@ -7,7 +7,6 @@
     },
     "main": "Software/FrontEnd/web.js",
     "scripts": {
-        "prepare": "cd Software/FrontEnd/omi-finder && npm install && npm run build && cd .. ",
         "start": "cd Software/FrontEnd/omi-finder && npm install && npm run build && cd .. && node web.js",
         "test": "jest",
         "delete-build" : "rmdir Software\\FrontEnd\\build /s /q"
