@@ -56,5 +56,50 @@ async function getTipo(model, filter, parameters, settore, tipo) {
     return result;
 }
 
+async function userGetStatus(_id, User) {
+    return User
+		.findById(_id)
+		// what it sends back (if the user with the id=${id} exists)
+		.select("_id, idPayment")	
+		.then(function (data, err) {
+			// if the user with the id=${id} exists
+			if(data)    return data
+            else        return err
+		})
+		.catch(function () {
+			// if the user with the id=${id} does not exist
+			return `The ID ${_id} does not exist`
+		});
+}
+
+async function registerNewUser(_email, _password, _createdIn, Utente) {
+    return Utente.findOne({email:_email}).then((user) => {
+		if(user)
+			return { email: ' A user with this email address has already registered '}
+		else {
+			if(checkIfEmailInString(_email)) {
+				const newUser = new Utente({
+					email: _email,
+					password: _password,
+					createdIn: _createdIn,
+					idPayment: ''
+				})
+				newUser.save()
+				return { user: newUser }
+			} 
+			else {
+				return { email: ' The format for the email address is wrong ' }
+			}
+		}
+	})
+}
+
+function checkIfEmailInString(text) {
+	// eslint-disable-next-line
+	var re =
+	  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(text);
+}
+
 //Exports ---------------------------------------------
-module.exports = {getBy,getSettore,getTipo};
+module.exports = {getBy,getSettore,getTipo,userGetStatus,registerNewUser,changePassword};
