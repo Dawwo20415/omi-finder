@@ -10,7 +10,7 @@
         "start": "node web.js",
         "test": "jest",
         "build" : "cd Software/FrontEnd/omi-finder && npm install && npm run build && cd .. ",
-        "heroku-postbuild":"npm build",
+        "heroku-postbuild":"npm run build",
         "delete-build" : "rmdir Software\\FrontEnd\\build /s /q"
     },
     "author": "Dawwo-15",
