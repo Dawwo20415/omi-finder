@@ -48,9 +48,9 @@ app.put('/v2/register/', urlencodedParser, async (req, res) => {
 
 app.patch('/v2/changePassword', urlencodedParser, async (req, res) => {
 	_email = req.body.email
-	// vecchia password già cifrata lato frontend
+	// vecchia password già cifrata lato front-end
 	_oldPassword = req.body.oldPassword
-	// nuova password già cifrata lato frontend
+	// nuova password già cifrata lato front-end
 	_newPassword = req.body._newPassword
 
 	res.json(await Iapi.changePassword(_email, _oldPassword, _newPassword, Utente))
