@@ -46,6 +46,16 @@ app.put('/v2/register/', urlencodedParser, async (req, res) => {
 	res.json(await Iapi.registerNewUser(_email, _password, _createdIn, Utente))
 })
 
+app.patch('/v2/changePassword', urlencodedParser, async (req, res) => {
+	_email = req.body.email
+	// vecchia password già cifrata lato frontend
+	_oldPassword = req.body.oldPassword
+	// nuova password già cifrata lato frontend
+	_newPassword = req.body._newPassword
+
+	res.json(await Iapi.changePassword(_email, _oldPassword, _newPassword, Utente))
+})
+
 // Siccome React ha un router interno passo ad ogni pagina del sito
 // il frontend di React ("/*" significa ogni path dopo root)
 app.get("/*", (req, res) => {
