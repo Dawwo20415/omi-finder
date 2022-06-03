@@ -97,14 +97,14 @@ async function registerNewUser(_email, _password, _createdIn, Utente) {
 async function changePassword(_email, _oldPassword, _newPassword, Utente) {
     return Utente.findOne({email:_email}).then((user) => {
         if(!user)
-            return { email: ' No user with that email address is registered '}
+            return { email: 'No user with that email address is registered'}
         else {
             if(user.password == _oldPassword) {
                 user.password = _newPassword
                 user.save()
                 return { user: user }
             } else  
-                return { password: ' The old password does not match the one on the database '}
+                return { password: 'The old password does not match the one on the database'}
         }
     })
 }
