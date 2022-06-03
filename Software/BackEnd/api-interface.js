@@ -117,4 +117,4 @@ function checkIfEmailInString(text) {
 }
 
 //Exports ---------------------------------------------
-module.exports = {getBy,getSettore,getTipo,userGetStatus,registerNewUser,changePassword};
+module.exports = {getBy,getSettore,getTipo,userGetStatus,registerNewUser};
