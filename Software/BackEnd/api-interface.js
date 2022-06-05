@@ -1,5 +1,6 @@
 const dbInterface = require('./atlas-interface.js');
 const res = require('express/lib/response');
+const jwt = require("jsonwebtoken"); 
 
 async function getBy(model, filter, parameters) {
     var result;
@@ -119,6 +120,31 @@ async function changePassword(_email, _oldPassword, _newPassword, Utente) {
     })
 }
 
+async function loginUser(_email, _password, Utente) {
+    return Utente.findOne({ email:_email }).then((user) => {
+        if(!user)
+            return { success: false, message: ' No user with that email address is registered '}
+        else {
+            if(user.password != _password)
+                return { success: false, message: ' The password does not match the one on the database '}
+            else {
+                var payload = {
+                    email: user.email,
+                    id: user._id,
+                }
+                var options = {
+                    expiresIn: 86400, // expires in 24 hours
+                }
+                var token = jwt.sign(payload, process.env.SUPER_SECRET, options)
+
+                return {
+                    success: true,
+                    message: "Successfully logged in",
+                    token: token,
+                    email: user.email,
+                    id: user._id
+                };
+            }
         }
     })
 }
@@ -131,3 +157,4 @@ function checkIfEmailInString(text) {
 }
 
 //Exports ---------------------------------------------
+module.exports = {getBy,getSettore,getTipo,userGetStatus,registerNewUser,changePassword, loginUser};

@@ -9,16 +9,18 @@
     "scripts": {
         "start": "node Software/FrontEnd/web.js",
         "test": "jest",
-        "build" : "cd Software/FrontEnd/omi-finder && npm install && npm run build && cd .. ",
-        "heroku-postbuild":"npm run build",
-        "delete-build" : "rmdir Software\\FrontEnd\\build /s /q"
+        "build": "cd Software/FrontEnd/omi-finder && npm install && npm run build && cd .. ",
+        "heroku-postbuild": "npm run build",
+        "delete-build": "rmdir Software\\FrontEnd\\build /s /q"
     },
     "author": "Dawwo-15",
     "license": "MIT",
     "dependencies": {
         "express": "^4.18.1",
         "mongodb": "^4.6.0",
-        "mongoose": "^6.3.4"
+        "mongoose": "^6.3.4",
+        "jsonwebtoken": "^8.5.1",
+        "body-parser": "^1.20.0"
     },
     "devDependencies": {
         "dotenv": "^16.0.1",
