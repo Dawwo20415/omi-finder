@@ -58,29 +58,42 @@ async function getTipo(model, filter, parameters, settore, tipo) {
 }
 
 async function userGetStatus(_id, User) {
-    return User
-		.findById(_id)
+    return User.findById(_id)
 		// what it sends back (if the user with the id=${id} exists)
 		.select("_id, idPayment")	
 		.then(function (data, err) {
 			// if the user with the id=${id} exists
-			if(data)    return data
-            else        return err
+			if(data) 
+                return {
+                    success: true,
+                    message: data
+                }
+            else
+                return {
+                    success: false,
+                    message: err
+                }
 		})
 		.catch(function () {
 			// if the user with the id=${id} does not exist
-			return {success: false, message: `The ID ${_id} does not exist`}
+			return {
+                success: false, 
+                message: `The ID ${_id} does not exist`
+            }
 		});
 }
 
 async function registerNewUser(_email, _password, _createdIn, Utente) {
     return Utente.findOne({email:_email}).then((user) => {
 		if(user)
-			return { success: false, message: ' A user with this email address has already registered '}
+			return { 
+                success: false, 
+                message: ' A user with this email address has already registered '
+            }
 		else {
 			if(checkIfEmailInString(_email)) {
 				const newUser = new Utente({
-					email: _email,
+                    email: _email,
 					password: _password,
 					createdIn: _createdIn,
 					idPayment: ''
@@ -90,11 +103,13 @@ async function registerNewUser(_email, _password, _createdIn, Utente) {
 				return { 
                     success: true,  
                     message: " User successfully signed up "
-                    
                 }
 			} 
 			else {
-				return { success: false, message: ' The format for the email address is wrong ' }
+				return { 
+                    success: false, 
+                    message: ' The format for the email address is wrong ' 
+                }
 			}
 		}
 	})
@@ -103,7 +118,10 @@ async function registerNewUser(_email, _password, _createdIn, Utente) {
 async function changePassword(_email, _oldPassword, _newPassword, Utente) {
     return Utente.findOne({email:_email}).then((user) => {
         if(!user)
-            return { success: false, message: ' No user with that email address is registered '}
+            return { 
+                success: false, 
+                message: ' No user with that email address is registered '
+            }
         else {
             if(user.password == _oldPassword) {
                 user.password = _newPassword
@@ -115,7 +133,10 @@ async function changePassword(_email, _oldPassword, _newPassword, Utente) {
                     id: user._id
                 }
             } else  
-                return { success: false, message: ' The old password does not match the one on the database '}
+                return { 
+                    success: false, 
+                    message: ' The old password does not match the one on the database '
+                }
         }
     })
 }
@@ -123,10 +144,16 @@ async function changePassword(_email, _oldPassword, _newPassword, Utente) {
 async function loginUser(_email, _password, Utente) {
     return Utente.findOne({ email:_email }).then((user) => {
         if(!user)
-            return { success: false, message: ' No user with that email address is registered '}
+            return { 
+                success: false, 
+                message: ' No user with that email address is registered '
+            }
         else {
             if(user.password != _password)
-                return { success: false, message: ' The password does not match the one on the database '}
+                return { 
+                    success: false, 
+                    message: ' The password does not match the one on the database '
+                }
             else {
                 var payload = {
                     email: user.email,
