@@ -68,14 +68,14 @@ async function userGetStatus(_id, User) {
 		})
 		.catch(function () {
 			// if the user with the id=${id} does not exist
-			return `The ID ${_id} does not exist`
+			return {success: false, message: `The ID ${_id} does not exist`}
 		});
 }
 
 async function registerNewUser(_email, _password, _createdIn, Utente) {
     return Utente.findOne({email:_email}).then((user) => {
 		if(user)
-			return { email: ' A user with this email address has already registered '}
+			return { success: false, message: ' A user with this email address has already registered '}
 		else {
 			if(checkIfEmailInString(_email)) {
 				const newUser = new Utente({
@@ -85,10 +85,15 @@ async function registerNewUser(_email, _password, _createdIn, Utente) {
 					idPayment: ''
 				})
 				newUser.save()
-				return { user: newUser }
+                // it can return the saved password since it's been hashed (from the front-end)
+				return { 
+                    success: true,  
+                    message: " User successfully signed up "
+                    
+                }
 			} 
 			else {
-				return { email: ' The format for the email address is wrong ' }
+				return { success: false, message: ' The format for the email address is wrong ' }
 			}
 		}
 	})
@@ -97,14 +102,23 @@ async function registerNewUser(_email, _password, _createdIn, Utente) {
 async function changePassword(_email, _oldPassword, _newPassword, Utente) {
     return Utente.findOne({email:_email}).then((user) => {
         if(!user)
-            return { email: ' No user with that email address is registered '}
+            return { success: false, message: ' No user with that email address is registered '}
         else {
             if(user.password == _oldPassword) {
                 user.password = _newPassword
                 user.save()
-                return { user: user }
+                return {
+                    success: true, 
+                    message: "Password successfully changed",
+                    email: user.email,
+                    id: user._id
+                }
             } else  
-                return { password: ' The old password does not match the one on the database '}
+                return { success: false, message: ' The old password does not match the one on the database '}
+        }
+    })
+}
+
         }
     })
 }
@@ -117,4 +131,3 @@ function checkIfEmailInString(text) {
 }
 
 //Exports ---------------------------------------------
-module.exports = {getBy,getSettore,getTipo,userGetStatus,registerNewUser};

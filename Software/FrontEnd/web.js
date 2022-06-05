@@ -33,7 +33,7 @@ app.get("/v2/getTipo/:settore/:tipo/:filter", async (req, res) => {
 });
 
 app.post('/v2/userGetStatus/', urlencodedParser, async (req, res) => {
-	res.json(await Iapi.userGetStatus(req.body.id, Utente));
+	res.json(await Iapi.userGetStatus(req.body.id, Utente))
 })
 
 app.put('/v2/register/', urlencodedParser, async (req, res) => {
@@ -46,14 +46,21 @@ app.put('/v2/register/', urlencodedParser, async (req, res) => {
 	res.json(await Iapi.registerNewUser(_email, _password, _createdIn, Utente))
 })
 
-app.patch('/v2/changePassword', urlencodedParser, async (req, res) => {
+app.patch('/v2/changePassword/', urlencodedParser, async (req, res) => {
 	_email = req.body.email
 	// vecchia password già cifrata lato frontend
 	_oldPassword = req.body.oldPassword
 	// nuova password già cifrata lato frontend
-	_newPassword = req.body._newPassword
+	_newPassword = req.body.newPassword
 
 	res.json(await Iapi.changePassword(_email, _oldPassword, _newPassword, Utente))
+})
+
+app.post('/v2/login/', urlencodedParser, async (req, res) => {
+	_email = req.body.email
+	_password = req.body.password
+
+	res.json(await Iapi.loginUser(_email, _password, Utente))
 })
 
 // Siccome React ha un router interno passo ad ogni pagina del sito
