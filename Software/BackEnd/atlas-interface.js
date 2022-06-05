@@ -20,6 +20,25 @@ async function atlasConnectionSetup() {
     return mongoose.connection.readyState;
 }
 
+async function atlasConnectionToDatabase(database) {
+    const uri = 'mongodb+srv://' + process.env.USER + ':' + process.env.PASSWORD + '@omifinder.brexx.mongodb.net/' + database + '?retryWrites=true&w=majority'; 
+    console.log('Attempting to connect to [' + uri +']');
+    var outcome = uri;
+
+    await new Promise((resolve, reject) => {
+        mongoose.connect(uri, (err) => {
+            if (err) {
+                reject(err);
+                
+            } else {
+                resolve("Connected");
+            }
+        });
+    }); 
+
+    return mongoose.connection.readyState;
+}
+
 async function disconnect() {
     await mongoose.disconnect();
     return mongoose.connection.readyState;
@@ -55,7 +74,7 @@ async function aggregation(model, filter, group_layout) {
 }
 
 //Exports ---------------------------------------------
-module.exports = {atlasConnectionSetup, disconnect, query, aggregation};
+module.exports = {atlasConnectionSetup, atlasConnectionToDatabase, disconnect, query, aggregation};
 
 
 

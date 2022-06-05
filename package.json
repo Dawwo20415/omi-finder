@@ -8,7 +8,7 @@
     "main": "Software/FrontEnd/web.js",
     "scripts": {
         "start": "node Software/FrontEnd/web.js",
-        "test": "jest",
+        "test": "jest --setupFiles dotenv/config",
         "build": "cd Software/FrontEnd/omi-finder && npm install && npm run build && cd .. ",
         "heroku-postbuild": "npm run build",
         "delete-build": "rmdir Software\\FrontEnd\\build /s /q"
