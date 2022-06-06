@@ -1,5 +1,6 @@
 const dbInterface = require('./atlas-interface.js');
 const res = require('express/lib/response');
+const jwt = require("jsonwebtoken"); 
 
 async function getBy(model, filter, parameters) {
     var result;
@@ -56,5 +57,150 @@ async function getTipo(model, filter, parameters, settore, tipo) {
     return result;
 }
 
+async function getByCoordinate(model, longitude, latitude) {
+    var result;
+
+    const filter = {
+        coordinate: {
+            $geoIntersects: {
+                $geometry: {
+                    type: "Point",
+                    coordinates: [longitude, latitude],
+                },
+            },
+        },
+    };
+
+    result = await dbInterface.query(model, filter, '_id');
+
+    return result;
+}
+
+async function userGetStatus(_id, User) {
+    return User.findById(_id)
+		// what it sends back (if the user with the id=${id} exists)
+		.select("_id, idPayment")	
+		.then(function (data, err) {
+			// if the user with the id=${id} exists
+			if(data) 
+                return {
+                    success: true,
+                    message: data
+                }
+            else
+                return {
+                    success: false,
+                    message: err
+                }
+		})
+		.catch(function () {
+			// if the user with the id=${id} does not exist
+			return {
+                success: false, 
+                message: `The ID ${_id} does not exist`
+            }
+		});
+}
+
+async function registerNewUser(_email, _password, _createdIn, Utente) {
+    return Utente.findOne({email:_email}).then((user) => {
+		if(user)
+			return { 
+                success: false, 
+                message: ' A user with this email address has already registered '
+            }
+		else {
+			if(checkIfEmailInString(_email)) {
+				const newUser = new Utente({
+                    email: _email,
+					password: _password,
+					createdIn: _createdIn,
+					idPayment: ''
+				})
+				newUser.save()
+                // it can return the saved password since it's been hashed (from the front-end)
+				return { 
+                    success: true,  
+                    message: " User successfully signed up "
+                }
+			} 
+			else {
+				return { 
+                    success: false, 
+                    message: ' The format for the email address is wrong ' 
+                }
+			}
+		}
+	})
+}
+
+async function changePassword(_email, _oldPassword, _newPassword, Utente) {
+    return Utente.findOne({email:_email}).then((user) => {
+        if(!user)
+            return { 
+                success: false, 
+                message: ' No user with that email address is registered '
+            }
+        else {
+            if(user.password == _oldPassword) {
+                user.password = _newPassword
+                user.save()
+                return {
+                    success: true, 
+                    message: "Password successfully changed",
+                    email: user.email,
+                    id: user._id
+                }
+            } else  
+                return { 
+                    success: false, 
+                    message: ' The old password does not match the one on the database '
+                }
+        }
+    })
+}
+
+async function loginUser(_email, _password, Utente) {
+    return Utente.findOne({ email:_email }).then((user) => {
+        if(!user)
+            return { 
+                success: false, 
+                message: ' No user with that email address is registered '
+            }
+        else {
+            if(user.password != _password)
+                return { 
+                    success: false, 
+                    message: ' The password does not match the one on the database '
+                }
+            else {
+                var payload = {
+                    email: user.email,
+                    id: user._id,
+                }
+                var options = {
+                    expiresIn: 86400, // expires in 24 hours
+                }
+                var token = jwt.sign(payload, process.env.SUPER_SECRET, options)
+
+                return {
+                    success: true,
+                    message: "Successfully logged in",
+                    token: token,
+                    email: user.email,
+                    id: user._id
+                };
+            }
+        }
+    })
+}
+
+function checkIfEmailInString(text) {
+	// eslint-disable-next-line
+	var re =
+	  /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(text);
+}
+
 //Exports ---------------------------------------------
-module.exports = {getBy,getSettore,getTipo};
+module.exports = {getBy,getSettore,getTipo,getByCoordinate,userGetStatus,registerNewUser,changePassword, loginUser};
