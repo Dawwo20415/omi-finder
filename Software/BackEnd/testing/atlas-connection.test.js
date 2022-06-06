@@ -14,7 +14,7 @@ afterAll(async () => {
 });
 
 test('bla blas', async () => {
-    let expected_result = [{"_id":"629395dc6e658073a405d521"}, {"_id": "6293960cb420e9cea995d2e8"}];
+    let expected_result = [{"_id":"629c1301f666bfc86924865b"},{"_id":"629c1304f666bfc86924867d"}]
 
     expect(JSON.stringify(await Iatlas.query(zona_omi.model, {'comune':'TRENTO'}, '_id', 2))).toBe(JSON.stringify(expected_result));
 });
