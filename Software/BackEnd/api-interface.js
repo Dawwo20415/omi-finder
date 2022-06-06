@@ -61,6 +61,25 @@ async function getTipo(model, filter, parameters, settore, tipo) {
 	return result;
 }
 
+async function getByCoordinate(model, longitude, latitude) {
+	var result;
+
+	const filter = {
+		coordinate: {
+			$geoIntersects: {
+				$geometry: {
+					type: "Point",
+					coordinates: [longitude, latitude],
+				},
+			},
+		},
+	};
+
+	result = await dbInterface.query(model, filter, "_id");
+
+	return result;
+}
+
 async function userGetStatus(_id, User) {
 	return (
 		User.findById(_id)
@@ -338,6 +357,7 @@ module.exports = {
 	getBy,
 	getSettore,
 	getTipo,
+	getByCoordinate,
 	userGetStatus,
 	registerUser,
 	changePassword,

@@ -60,7 +60,7 @@ app.patch("/v2/changePassword/", urlencodedParser, async (req, res) => {
 // Pagina web
 // Siccome React ha un router interno passo ad ogni pagina del sito
 // il frontend di React ("/*" significa ogni path dopo root)
-app.get("/*", (req, res) => {
+app.get("/*", (_, res) => {
 	res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 

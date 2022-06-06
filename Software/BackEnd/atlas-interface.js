@@ -48,7 +48,7 @@ async function query(model, filter, projection = '', limit = 0) {
     var result = {};
 
     const quer = model.find(filter, projection).lean();
-
+    
     if (limit)
         quer.limit(limit);
 

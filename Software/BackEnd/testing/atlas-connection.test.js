@@ -1,33 +1,40 @@
 const { query } = require('express');
 const mongoose = require('mongoose');
 const Iatlas = require('../atlas-interface.js');
-const test_models = require('./test-schema-definition.js');
+const zona_omi = require('../zona-omi-definition.js');
 let time_out = 10000;
 
-beforeAll(async () => {  
-   await Iatlas.atlasConnectionToDatabase('OmiFinder');
+beforeAll(async () => {
+    
+   await Iatlas.atlasConnectionSetup();
 }, time_out);
 
 afterAll(async () => {
     await Iatlas.disconnect();
 });
 
-test('Test for numeric value', async () => {
-    expect(JSON.stringify(await Iatlas.query(test_models.model, {}, 'valore_numerico -_id', 1))).toBe(JSON.stringify([{"valore_numerico":777}]));
+test('bla blas', async () => {
+    let expected_result = [{"_id":"629c1301f666bfc86924865b"},{"_id":"629c1304f666bfc86924867d"}]
+
+    expect(JSON.stringify(await Iatlas.query(zona_omi.model, {'comune':'TRENTO'}, '_id', 2))).toBe(JSON.stringify(expected_result));
 });
 
-test('Test for string value', async () => {
-    expect(JSON.stringify(await Iatlas.query(test_models.model, {}, 'valore_testuale -_id', 1))).toBe(JSON.stringify([{"valore_testuale":"Qui Testo Prova"}]));
-});
+/*
+main().catch(err => console.log(err));
 
-test('Test for boolean value', async () => {
-    expect(JSON.stringify(await Iatlas.query(test_models.model, {}, 'valore_booleano -_id', 1))).toBe(JSON.stringify([{"valore_booleano":true}]));
-});
+async function main() {
 
-test('Test for array value', async () => {
-    expect(JSON.stringify(await Iatlas.query(test_models.model, {}, 'array_numerico -_id', 1))).toBe(JSON.stringify([{"array_numerico":[1,2,3,4,5,6,7,8,9]}]));
-});
+    custom_api.atlasConnectionSetup();
 
-test('Test for subobject value', async () => {
-    expect(JSON.stringify(await Iatlas.query(test_models.model, {}, 'sotto_oggetto -_id', 1))).toBe(JSON.stringify([{"sotto_oggetto":{"valore_1":111,"valore_2":"Stringa Sotto Oggetto"}}]));
-});
+    result = await custom_api.query(zona_omi.model, {'comune':'TRENTO','valori.semestre' : '20212'}, 'valori');
+
+    console.log(result);
+    console.log('----------------------------------------');
+
+    //result = await custom_api.aggregation(zona_omi.model, {"provincia": "TN"}, {_id:'$comune', valore:{$sum : "$codice_catasto"}});
+
+    //console.log(result);
+
+    process.exit();
+}
+*/

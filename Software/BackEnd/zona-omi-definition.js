@@ -37,7 +37,7 @@ const schema = mongoose.Schema(
 				},
 			},
 		],
-		coordinate: mongoose.Schema.Types.MultiPolygon, // Multipoligono GeoJSON del perimetro della zona OMI
+		coordinate: multiPolygonSchema, // Multipoligono GeoJSON del perimetro della zona OMI
 	},
 	{ collection: "ZoneOmi", strictQuery: "throw" }
 );
