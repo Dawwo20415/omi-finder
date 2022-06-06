@@ -13,6 +13,8 @@
 	font-size: 22px;
 	color: colors.$white3;
 
+	cursor: pointer;
+
 	&:hover {
 		background-color: darken(colors.$cyan, 10%);
 	}

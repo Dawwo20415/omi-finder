@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./GenericField.module.scss";
 
 interface GenericFieldProps {
+	name: string;
 	description: string;
 }
 
@@ -24,7 +25,13 @@ class GenericField extends React.Component<GenericFieldProps, GenericFieldState>
 		return (
 			<div className={styles.GenericField}>
 				<span className={styles.Description}>{this.props.description}</span>
-				<input className={styles.Input} value={this.state.value} onChange={this.onInputChange} type="text" />
+				<input
+					className={styles.Input}
+					name={this.props.name}
+					value={this.state.value}
+					onChange={this.onInputChange}
+					type="text"
+				/>
 			</div>
 		);
 	}

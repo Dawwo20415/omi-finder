@@ -1,13 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App/App";
+import Toast from "./Toast/Toast";
 import "./index.scss";
-// import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
+const root = ReactDOM.createRoot(document.getElementById("root") as HTMLDivElement);
 root.render(
 	<React.StrictMode>
 		<App />
+	</React.StrictMode>
+);
+
+const modalRoot = ReactDOM.createRoot(document.getElementById("modal-root") as HTMLDivElement);
+modalRoot.render(
+	<React.StrictMode>
+		<Toast />
 	</React.StrictMode>
 );
 

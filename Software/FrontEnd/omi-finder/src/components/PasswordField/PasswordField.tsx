@@ -3,12 +3,16 @@ import Eye from "../Eye/Eye";
 import EyeSlash from "../EyeSlash/EyeSlash";
 import styles from "./PasswordField.module.scss";
 
+interface PasswordFieldProps {
+	name: string;
+}
+
 interface PasswordFieldState {
 	value: string;
 	hidden: boolean;
 }
-class PasswordField extends React.Component<{}, PasswordFieldState> {
-	constructor(props: {}) {
+class PasswordField extends React.Component<PasswordFieldProps, PasswordFieldState> {
+	constructor(props: PasswordFieldProps) {
 		super(props);
 		this.state = { value: "", hidden: false };
 		this.onInputChange = this.onInputChange.bind(this);
@@ -41,7 +45,13 @@ class PasswordField extends React.Component<{}, PasswordFieldState> {
 			<div className={styles.PasswordField}>
 				<span className={styles.Description}>Password</span>
 				<div className={styles.InputContainer}>
-					<input className={styles.Input} value={this.state.value} onChange={this.onInputChange} type={inputType} />
+					<input
+						className={styles.Input}
+						name={this.props.name}
+						value={this.state.value}
+						onChange={this.onInputChange}
+						type={inputType}
+					/>
 					<button className={styles.HiddenButton} onClick={this.onButtonClick} type="button">
 						{buttonIcon}
 					</button>

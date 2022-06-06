@@ -1,0 +1,81 @@
+@use "../colors";
+@use "../fonts";
+
+@keyframes move-up {
+	from {
+		transform: translate(-50%, 250%);
+	}
+	to {
+		transform: translate(-50%, 0%);
+	}
+}
+
+.Toast {
+	$height: 40px;
+	$borderRadius: 5px;
+
+	position: absolute;
+	left: 50%;
+	bottom: 40px;
+
+	display: flex;
+	border-radius: $borderRadius;
+	background-color: colors.$red;
+
+	animation-name: move-up;
+	animation-duration: 0.5s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease-out;
+	pointer-events: auto;
+
+	& > .Text {
+		display: block;
+		height: $height;
+		padding: 0 30px;
+
+		color: colors.$white3;
+		font-family: fonts.$Roboto;
+		font-size: 18px;
+		font-weight: bold;
+		line-height: $height;
+
+		border-top-left-radius: $borderRadius;
+		border-bottom-left-radius: $borderRadius;
+		user-select: none;
+	}
+
+	& > .CloseButton {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: $height;
+		width: $height;
+
+		border-top-right-radius: $borderRadius;
+		border-bottom-right-radius: $borderRadius;
+		background-color: #0000;
+
+		&:hover {
+			background-color: darken(colors.$red, 10%);
+		}
+
+		&:active {
+			background-color: darken(colors.$red, 5%);
+		}
+
+		&:focus {
+			outline: 1px solid colors.$white3;
+		}
+
+		& > svg {
+			width: 60%;
+			height: 60%;
+
+			& > path {
+				stroke: colors.$white3;
+				stroke-width: 12;
+				stroke-linecap: round;
+			}
+		}
+	}
+}

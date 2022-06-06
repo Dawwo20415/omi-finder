@@ -1,0 +1,58 @@
+@use "../../colors";
+@use "../../fonts";
+
+.AuthenticatedUserBanner {
+	$height: 40px;
+
+	position: relative;
+
+	& > .Username {
+		display: block;
+		width: 140px;
+		height: $height;
+		line-height: $height;
+		border-radius: 7px;
+		color: colors.$white3;
+		background-color: colors.$grey2;
+		font-family: fonts.$Roboto;
+		font-size: 18px;
+		text-align: center;
+		text-decoration: none;
+		box-shadow: 1px 1px 5px rgba(colors.$black, 80%);
+		user-select: none;
+		cursor: pointer;
+
+		&.active {
+			background-color: colors.$grey4;
+			text-shadow: 0 0 5px rgba(colors.$white3, 80%);
+		}
+
+		&:hover {
+			background-color: colors.$grey4;
+		}
+
+		&:active {
+			background-color: colors.$grey3;
+		}
+
+		&:focus {
+			outline: 1px solid colors.$cyan;
+		}
+	}
+
+	& > .BannerOptionsContainer {
+		position: absolute;
+		bottom: -20px;
+		right: 0;
+		transform: translateY(100%);
+
+		display: grid;
+		width: 200px;
+		grid-auto-rows: 40px;
+		gap: 10px;
+		padding: 10px;
+		border-radius: 10px;
+
+		background-color: colors.$grey1;
+	}
+}
