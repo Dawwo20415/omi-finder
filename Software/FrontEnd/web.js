@@ -21,50 +21,90 @@ app.use(express.static('C:/Users/Simone/Desktop/omi-finder-development/Software/
 
 
 app.get("/v2/getBy/:filter", async (req, res) => {
-	res.json(await Iapi.getBy(zona_omi.model, req.params.filter, req.query));
+	try {
+		res.json(await Iapi.getBy(zona_omi.model, req.params.filter, req.query));
+	} catch (e) {
+		console.log("riscontrato errore");
+		res.status(400).end();
+	}
 });
 
 app.get("/v2/getSettore/:settore/:filter", async (req, res) => {
-	res.json(await Iapi.getSettore(zona_omi.model, req.params.filter, req.query, req.params.settore));
+	try {
+		res.json(await Iapi.getSettore(zona_omi.model, req.params.filter, req.query, req.params.settore));
+	} catch (e) {
+		console.log("riscontrato errore");
+		res.status(400).end();
+	}
 });
 
 app.get("/v2/getTipo/:settore/:tipo/:filter", async (req, res) => {
+	try {
 	res.json(await Iapi.getTipo(zona_omi.model, req.params.filter, req.query, req.params.settore, req.params.tipo));
+	} catch (e) {
+		console.log("riscontrato errore");
+		res.status(400).end();
+	}
 });
 
 app.get("/v2/getByCoordinate", async (req, res) => {
-	res.json(await Iapi.getByCoordinate(zona_omi.model, req.query.longitude, req.query.latitude));
+	try {
+		res.json(await Iapi.getByCoordinate(zona_omi.model, req.query.longitude, req.query.latitude));
+	} catch (e) {
+		console.log("riscontrato errore");
+		res.status(400).end();
+	}
 });
 
 app.post('/v2/userGetStatus/', urlencodedParser, async (req, res) => {
-	res.json(await Iapi.userGetStatus(req.body.id, Utente))
+	try {
+		res.json(await Iapi.userGetStatus(req.body.id, Utente))
+	} catch (e) {
+		console.log("riscontrato errore");
+		res.status(400).end();
+	}
 });
 
 app.put('/v2/register/', urlencodedParser, async (req, res) => {
-	_email = req.body.email
-	// password già cifrata lato frontend
-	_password = req.body.password
-	// formato UNIX per verificare quando l'utente si è registrato 
-	_createdIn = Math.round(new Date().getTime()/1000)	
+	try {
+		_email = req.body.email
+		// password già cifrata lato frontend
+		_password = req.body.password
+		// formato UNIX per verificare quando l'utente si è registrato 
+		_createdIn = Math.round(new Date().getTime()/1000)	
 
-	res.json(await Iapi.registerNewUser(_email, _password, _createdIn, Utente))
+		res.json(await Iapi.registerNewUser(_email, _password, _createdIn, Utente))
+	} catch (e) {
+		console.log("riscontrato errore");
+		res.status(400).end();
+	}
 });
 
 app.patch('/v2/changePassword/', urlencodedParser, async (req, res) => {
-	_email = req.body.email
-	// vecchia password già cifrata lato frontend
-	_oldPassword = req.body.oldPassword
-	// nuova password già cifrata lato frontend
-	_newPassword = req.body.newPassword
+	try {
+		_email = req.body.email
+		// vecchia password già cifrata lato frontend
+		_oldPassword = req.body.oldPassword
+		// nuova password già cifrata lato frontend
+		_newPassword = req.body.newPassword
 
-	res.json(await Iapi.changePassword(_email, _oldPassword, _newPassword, Utente))
+		res.json(await Iapi.changePassword(_email, _oldPassword, _newPassword, Utente))
+	} catch (e) {
+		console.log("riscontrato errore");
+		res.status(400).end();
+	}
 });
 
 app.post('/v2/login/', urlencodedParser, async (req, res) => {
-	_email = req.body.email
-	_password = req.body.password
+	try {
+		_email = req.body.email
+		_password = req.body.password
 
-	res.json(await Iapi.loginUser(_email, _password, Utente))
+		res.json(await Iapi.loginUser(_email, _password, Utente))
+	} catch (e) {
+		console.log("riscontrato errore");
+		res.status(400).end();
+	}
 });
 
 // Siccome React ha un router interno passo ad ogni pagina del sito
