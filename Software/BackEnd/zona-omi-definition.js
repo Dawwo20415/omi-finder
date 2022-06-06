@@ -1,5 +1,17 @@
 const mongoose = require("mongoose");
 
+const multiPolygonSchema = new mongoose.Schema({
+	type: {
+		type: String,
+		enum: ["MultiPolygon"],
+		required: true,
+	},
+	coordinates: {
+		type: [[[[Number]]]],
+		required: true,
+	},
+});
+
 const schema = mongoose.Schema(
 	{
 		provincia: String, // Sigla della provincia della zona OMI (es. "TN" per Trento)

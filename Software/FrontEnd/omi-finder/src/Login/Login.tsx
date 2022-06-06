@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate, useNavigationType } from "react-router-dom";
 import { login } from "../authentication";
 import GenericField from "../components/GenericField/GenericField";
 import GenericLink from "../components/GenericLink/GenericLink";
@@ -6,6 +7,7 @@ import LoginAndRegisterDescription from "../components/LoginAndRegisterDescripti
 import LoginAndRegisterFormContainer from "../components/LoginAndRegisterFormContainer/LoginAndRegisterFormContainer";
 import LoginAndRegisterSubmitButton from "../components/LoginAndRegisterSubmitButton/LoginAndRegisterButton";
 import PasswordField from "../components/PasswordField/PasswordField";
+import { setLocalStorageCredentials } from "../localStorage";
 import { toastSubject } from "../Toast/Toast";
 import styles from "./Login.module.scss";
 
@@ -24,7 +26,14 @@ class Login extends React.Component {
 		};
 
 		login(credentials)
-			.then(() => {})
+			.then((response) => {
+				// TODO Memorizzare credenziali
+				// setLocalStorageCredentials({
+
+				// });
+				const navigate = useNavigate();
+				navigate("/private-area");
+			})
 			.catch(() => {
 				toastSubject.next({
 					hidden: false,
