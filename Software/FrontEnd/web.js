@@ -33,7 +33,9 @@ app.get("/v2/getTipo/:settore/:tipo/:filter", async (req, res) => {
 });
 
 app.post('/v2/userGetStatus/', urlencodedParser, async (req, res) => {
-	res.json(await Iapi.userGetStatus(req.body.id, Utente))
+	_id = req.body.id
+
+	res.json(await Iapi.userGetStatus(_id, Utente))
 })
 
 app.put('/v2/register/', urlencodedParser, async (req, res) => {
@@ -41,7 +43,7 @@ app.put('/v2/register/', urlencodedParser, async (req, res) => {
 	// password già cifrata lato frontend
 	_password = req.body.password
 	// formato UNIX per verificare quando l'utente si è registrato 
-	_createdIn = Math.round(new Date().getTime()/1000)	
+	_createdIn = Math.round(new Date().getTime()/1000)
 
 	res.json(await Iapi.registerNewUser(_email, _password, _createdIn, Utente))
 })
@@ -65,7 +67,7 @@ app.post('/v2/login/', urlencodedParser, async (req, res) => {
 
 // Siccome React ha un router interno passo ad ogni pagina del sito
 // il frontend di React ("/*" significa ogni path dopo root)
-app.get("/*", (req, res) => {
+app.get("/*", (_, res) => {
 	res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
