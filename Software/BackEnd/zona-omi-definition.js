@@ -1,5 +1,17 @@
 const mongoose = require("mongoose");
 
+const multiPolygonSchema = new mongoose.Schema({
+	type: {
+	  type: String,
+	  enum: ["MultiPolygon"],
+	  required: true,
+	},
+	coordinates: {
+	  type: [[[[Number]]]], // Array of arrays of arrays of numbers
+	  required: true,
+	},
+});
+
 const schema = mongoose.Schema(
 	{
 		provincia: String, // Sigla della provincia della zona OMI (es. "TN" per Trento)
@@ -25,7 +37,7 @@ const schema = mongoose.Schema(
 				},
 			},
 		],
-		coordinate: mongoose.Schema.Types.MultiPolygon, // Multipoligono GeoJSON del perimetro della zona OMI
+		coordinate: multiPolygonSchema, // Multipoligono GeoJSON del perimetro della zona OMI
 	},
 	{ collection: "ZoneOmi", strictQuery: "throw" }
 );

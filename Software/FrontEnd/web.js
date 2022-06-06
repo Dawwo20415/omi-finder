@@ -32,9 +32,13 @@ app.get("/v2/getTipo/:settore/:tipo/:filter", async (req, res) => {
 	res.json(await Iapi.getTipo(zona_omi.model, req.params.filter, req.query, req.params.settore, req.params.tipo));
 });
 
+app.get("/v2/getByCoordinate", async (req, res) => {
+	res.json(await Iapi.getByCoordinate(zona_omi.model, req.query.longitude, req.query.latitude));
+});
+
 app.post('/v2/userGetStatus/', urlencodedParser, async (req, res) => {
 	res.json(await Iapi.userGetStatus(req.body.id, Utente))
-})
+});
 
 app.put('/v2/register/', urlencodedParser, async (req, res) => {
 	_email = req.body.email
@@ -44,7 +48,7 @@ app.put('/v2/register/', urlencodedParser, async (req, res) => {
 	_createdIn = Math.round(new Date().getTime()/1000)	
 
 	res.json(await Iapi.registerNewUser(_email, _password, _createdIn, Utente))
-})
+});
 
 app.patch('/v2/changePassword/', urlencodedParser, async (req, res) => {
 	_email = req.body.email
@@ -54,14 +58,14 @@ app.patch('/v2/changePassword/', urlencodedParser, async (req, res) => {
 	_newPassword = req.body.newPassword
 
 	res.json(await Iapi.changePassword(_email, _oldPassword, _newPassword, Utente))
-})
+});
 
 app.post('/v2/login/', urlencodedParser, async (req, res) => {
 	_email = req.body.email
 	_password = req.body.password
 
 	res.json(await Iapi.loginUser(_email, _password, Utente))
-})
+});
 
 // Siccome React ha un router interno passo ad ogni pagina del sito
 // il frontend di React ("/*" significa ogni path dopo root)
