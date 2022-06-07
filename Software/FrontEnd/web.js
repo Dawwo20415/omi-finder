@@ -1,6 +1,8 @@
 const express = require("express");
 const path = require("path");
-var bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
+const url = require("url");
+const query = require("querystring");
 
 const Iapi = require("../BackEnd/api-interface.js");
 const Iatlas = require("../BackEnd/atlas-interface.js");
@@ -29,6 +31,12 @@ app.get("/v2/getSettore/:settore/:filter", async (req, res) => {
 
 app.get("/v2/getTipo/:settore/:tipo/:filter", async (req, res) => {
 	res.json(await Iapi.getTipo(zona_omi.model, req.params.filter, req.query, req.params.settore, req.params.tipo));
+});
+
+app.get("/v2/getByCoordinate", async (req, res) => {
+	const parsedUrl = url.parse(req.url);
+	const { latitude, longitude } = query.parse(parsedUrl.query);
+	res.json(await Iapi.getByCoordinate(zona_omi.model,longitude,latitude));
 });
 
 // Da qua in giù autenticazione

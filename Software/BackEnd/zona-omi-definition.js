@@ -22,18 +22,31 @@ const schema = mongoose.Schema(
 		valori: [
 			{
 				semestre: String, // Stringa con numero anno + numero semestre (es. 20212 vuol dire anno 2021 secondo semestre)
-				// FIXME Da rivedere, credo che alcuni campi opzionali manchino in "residenziale", "commerciale" e "terziaria"
 				residenziale: {
 					box: { min: String, max: String },
 					abitazioni_civili: { min: String, max: String },
 					ville_e_villini: { min: String, max: String },
+					posti_auto_coperto: { min: String, max: String },
+					posti_auto_scoperto: { min: String, max: String },
+					autorimesse: { min: String, max: String },
+					abitazioni_signorili: { min: String, max: String },
+					abitazioni_di_tipo_economico: { min: String, max: String },
+					abitazioni_tipiche_dei_luoghi: { min: String, max: String },
+					pensioni_e_assimilati: { min: String, max: String },
 				},
 				commerciale: {
 					magazzini: { min: String, max: String },
 					negozi: { min: String, max: String },
+					centri_commerciali: { min: String, max: String },
+					uffici_strutturati: { min: String, max: String },
 				},
 				terziaria: {
 					uffici: { min: String, max: String },
+				},
+				produttiva: {
+					capannoni_tipici: { min: String, max: String },
+					capannoni_industriali: { min: String, max: String },
+					laboratori: { min: String, max: String },
 				},
 			},
 		],
