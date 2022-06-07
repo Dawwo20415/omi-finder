@@ -89,8 +89,13 @@ app.get("/api-docs");
  *               items:
  *                 type: object
  */
-app.get("/v2/getBy/:filter", async (req, res) => {
-	res.json(await Iapi.getBy(zona_omi.model, req.params.filter, req.query));
+ app.get("/v2/getBy/:filter", async (req, res) => {
+	try {
+		res.json(await Iapi.getBy(zona_omi.model, req.params.filter, req.query));
+	} catch (e) {
+		console.log("riscontrato errore");
+		res.status(400).end();
+	}
 });
 
 /**
@@ -153,8 +158,13 @@ app.get("/v2/getBy/:filter", async (req, res) => {
  *               items:
  *                 type: object
  */
-app.get("/v2/getSettore/:settore/:filter", async (req, res) => {
-	res.json(await Iapi.getSettore(zona_omi.model, req.params.filter, req.query, req.params.settore));
+ app.get("/v2/getSettore/:settore/:filter", async (req, res) => {
+	try {
+		res.json(await Iapi.getSettore(zona_omi.model, req.params.filter, req.query, req.params.settore));
+	} catch (e) {
+		console.log("riscontrato errore");
+		res.status(400).end();
+	}
 });
 
 /**
@@ -225,8 +235,22 @@ app.get("/v2/getSettore/:settore/:filter", async (req, res) => {
  *               items:
  *                 type: object
  */
-app.get("/v2/getTipo/:settore/:tipo/:filter", async (req, res) => {
+ app.get("/v2/getTipo/:settore/:tipo/:filter", async (req, res) => {
+	try {
 	res.json(await Iapi.getTipo(zona_omi.model, req.params.filter, req.query, req.params.settore, req.params.tipo));
+	} catch (e) {
+		console.log("riscontrato errore");
+		res.status(400).end();
+	}
+});
+
+app.get("/v2/getByCoordinate", async (req, res) => {
+	try {
+		res.json(await Iapi.getByCoordinate(zona_omi.model, req.query.longitude, req.query.latitude));
+	} catch (e) {
+		console.log("riscontrato errore");
+		res.status(400).end();
+	}
 });
 
 // Da qua in giù autenticazione
