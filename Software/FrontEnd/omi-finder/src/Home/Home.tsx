@@ -12,6 +12,7 @@ import { toastSubject } from "../Toast/Toast";
 
 interface HomeState {
 	coordinate: string;
+	val:any;
 }
 
 class Home extends React.Component<{}, HomeState> {
@@ -20,6 +21,7 @@ class Home extends React.Component<{}, HomeState> {
 		this.onFormSubmit = this.onFormSubmit.bind(this);
 		this.state = {
 			coordinate: "",
+			val:null
 		};
 	}
 
@@ -47,6 +49,7 @@ class Home extends React.Component<{}, HomeState> {
 						});
 					} else {
 						console.log(valori);
+						this.setState({ val: valori });
 					}
 				});
 			})
@@ -57,6 +60,7 @@ class Home extends React.Component<{}, HomeState> {
 				});
 			});
 	}
+
 
 	public render() {
 		return (
@@ -75,7 +79,7 @@ class Home extends React.Component<{}, HomeState> {
 					<GenericField name="address" description="Indirizzo" />
 					<LoginAndRegisterSubmitButton text="Cerca" />
 				</form>
-				<div className={styles.Result}>{this.state.coordinate}</div>
+				<div className={styles.Result}> <pre style={{color:'white'}}>{JSON.stringify(this.state.val,null,2)}</pre> </div>
 			</div>
 		);
 	}
