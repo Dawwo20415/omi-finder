@@ -38,7 +38,7 @@ class Home extends React.Component<{}, HomeState> {
 		Geocode.setRegion("it");
 
 		Geocode.fromAddress(`${city}, ${address}`)
-			.then((value) => {
+			.then((value:any) => {
 				const { lng, lat } = value.results[0].geometry.location;
 				this.setState({ coordinate: `${lng} ${lat}` });
 				findZona({ lng, lat }).then((valori) => {
