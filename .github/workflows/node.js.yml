@@ -39,5 +39,4 @@ jobs:
       #   and goes directly to 'package-lock.json'
     - run: npm ci
       # runs the commands as if on command lineS
-    - run: npm run build --if-present
     - run: npm test
