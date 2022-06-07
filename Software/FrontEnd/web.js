@@ -244,6 +244,43 @@ app.get("/api-docs");
 	}
 });
 
+/**
+ * @swagger
+ * /v2/getByCoordinate:
+ *   get:
+ *     summary: Ritorna l'id della zona corrispondente alle coordinate.
+ *     description: Inserire la longitudine e la latitudine definisce unicamente una zona-omi, di default questa richiesta ritorna un solo oggetto, che però è comunque aggregato in un array.
+ *     parameters:
+ *       - name: longitude
+ *         in: query
+ *         required: true
+ *         description: valore di longitudine.
+ *         schema:
+ *           type: int
+ *       - name: latitude
+ *         in: query
+ *         required: true
+ *         description: valore di latitudine.
+ *         schema:
+ *           type: int
+ *     responses:
+ *       '200':
+ *         description: Array JSON di _id di zone-omi corrispondenti lle coordinate
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *       '400':
+ *         description: Il link mandato non è scritto in modo corretto ed ha causato un errore nella lettura
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ */
 app.get("/v2/getByCoordinate", async (req, res) => {
 	try {
 		res.json(await Iapi.getByCoordinate(zona_omi.model, req.query.longitude, req.query.latitude));
