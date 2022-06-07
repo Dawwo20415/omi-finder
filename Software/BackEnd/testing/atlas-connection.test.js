@@ -18,23 +18,3 @@ test('bla blas', async () => {
 
     expect(JSON.stringify(await Iatlas.query(zona_omi.model, {'comune':'TRENTO'}, '_id', 2))).toBe(JSON.stringify(expected_result));
 });
-
-/*
-main().catch(err => console.log(err));
-
-async function main() {
-
-    custom_api.atlasConnectionSetup();
-
-    result = await custom_api.query(zona_omi.model, {'comune':'TRENTO','valori.semestre' : '20212'}, 'valori');
-
-    console.log(result);
-    console.log('----------------------------------------');
-
-    //result = await custom_api.aggregation(zona_omi.model, {"provincia": "TN"}, {_id:'$comune', valore:{$sum : "$codice_catasto"}});
-
-    //console.log(result);
-
-    process.exit();
-}
-*/
