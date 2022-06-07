@@ -74,7 +74,11 @@ async function getByCoordinate(model, longitude, latitude) {
 	};
 
 	const result = await dbInterface.query(model, filter, "valori");
-	return result[0].valori;
+	if (result) {
+		return result[0].valori;
+	} else {
+		return {};
+	}
 }
 
 // Da qua in giù autenticazione
