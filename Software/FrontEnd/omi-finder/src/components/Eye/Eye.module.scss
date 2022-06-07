@@ -1,0 +1,12 @@
+@use "../../colors";
+
+.Eye {
+	$size: 20px;
+
+	width: $size;
+	height: $size;
+
+	& > path {
+		fill: colors.$white3;
+	}
+}

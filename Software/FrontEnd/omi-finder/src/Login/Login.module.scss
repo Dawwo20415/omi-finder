@@ -1,0 +1,36 @@
+@use "../colors";
+@use "../fonts";
+
+.Login {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.Form {
+	display: grid;
+	grid-template-rows: 1fr;
+	gap: 60px;
+	margin: 60px;
+	justify-items: center;
+}
+
+.LinksContainer {
+	display: flex;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	margin: 10px;
+
+	& > .ForgotPasswordContainer {
+		display: block;
+	}
+
+	& > .CreateAccountDescription {
+		display: block;
+		color: colors.$white3;
+		font-family: fonts.$Roboto;
+		font-size: 18px;
+	}
+}

@@ -1,0 +1,35 @@
+@use "../../colors";
+@use "../../fonts";
+
+.AuthenticatedUserBannerOption {
+	display: block;
+	width: 100%;
+	height: 100%;
+
+	border-radius: 5px;
+	color: colors.$white3;
+	background-color: #0000;
+	font-family: fonts.$Roboto;
+	font-size: 18px;
+	text-align: center;
+	text-decoration: none;
+	user-select: none;
+	cursor: pointer;
+
+	&.active {
+		background-color: colors.$grey4;
+		text-shadow: 0 0 5px rgba(colors.$white3, 80%);
+	}
+
+	&:hover {
+		background-color: colors.$grey4;
+	}
+
+	&:active {
+		background-color: colors.$grey3;
+	}
+
+	&:focus {
+		outline: 1px solid colors.$cyan;
+	}
+}

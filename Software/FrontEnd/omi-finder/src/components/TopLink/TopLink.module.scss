@@ -1,0 +1,38 @@
+@use "../../colors";
+@use "../../fonts";
+
+.TopLink {
+	$height: 40px;
+
+	display: block;
+	width: 140px;
+	height: $height;
+	line-height: $height;
+	border-radius: 7px;
+	color: colors.$white3;
+	background-color: colors.$grey2;
+	font-family: fonts.$Roboto;
+	font-size: 18px;
+	text-align: center;
+	text-decoration: none;
+	box-shadow: 1px 1px 5px rgba(colors.$black, 80%);
+	user-select: none;
+	cursor: pointer;
+
+	&.active {
+		background-color: colors.$grey4;
+		text-shadow: 0 0 5px rgba(colors.$white3, 80%);
+	}
+
+	&:hover {
+		background-color: colors.$grey4;
+	}
+
+	&:active {
+		background-color: colors.$grey3;
+	}
+
+	&:focus {
+		outline: 1px solid colors.$cyan;
+	}
+}

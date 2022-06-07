@@ -1,0 +1,42 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ development ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+  
+    runs-on: ubuntu-latest
+    
+    # This is used to load Environment-level secrets, from the specified environment.
+    # Instead, repository secrets are loaded by default.
+    environment: production
+    
+    env:
+      # Must be set as a GitHub secret
+      USER: ${{ secrets.USER }} 
+      PASSWORD: ${{ secrets.PASSWORD }} 
+
+    strategy:
+      #Setup variables to be accessed later
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      # Checks out the repository and fetches latest commit https://github.com/actions/checkout
+    - uses: actions/checkout@v3
+      # As far as I understand it the space given by the workflow comes with node preinstalled, this dictates the version
+    - name: Use Node.js ${{ matrix.node-version }} 
+      # This action provides extra configuration for node.js https://github.com/actions/setup-node
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+      # ci is same as 'npm install' but skips 'package.json'
+      #   and goes directly to 'package-lock.json'
+    - run: npm ci
+      # runs the commands as if on command lineS
+    - run: npm test

@@ -1,2 +1,6 @@
 .~lock.*
 Passwords.txt
+node_modules
+.env
+
+Software/Frontend/build

@@ -1,0 +1,13 @@
+@use "../../colors";
+
+.LoginAndRegisterFormContainer {
+	display: flex;
+	flex-direction: column;
+
+	width: 800px;
+	height: 75%;
+	border-radius: 30px;
+	padding: 20px;
+	background-color: colors.$grey1;
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 40%), -1px -1px 5px rgba(0, 0, 0, 20%);
+}

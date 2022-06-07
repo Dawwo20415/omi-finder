@@ -1,0 +1,51 @@
+@use "../colors";
+@use "../fonts";
+
+.Home {
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: repeat(3, 1fr);
+
+	font-family: fonts.$Roboto;
+	width: 100%;
+	height: 100%;
+
+	& > .LogoContainer {
+		margin: 20px 30px;
+	}
+
+	& > .Description {
+		display: block;
+		height: 28px;
+		color: colors.$white3;
+		font-family: fonts.$Roboto;
+		font-size: 20px;
+		font-weight: 100;
+		user-select: none;
+		
+	}
+
+	& > .SearchBarContainer {
+		grid-row-start: 2;
+		grid-column-start: 2;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+
+		& > .SearchBarDescription {
+			font-family: fonts.$Roboto;
+			font-size: 14px;
+			color: colors.$white3;
+			user-select: none;
+		}
+	}
+
+	& >.Result{
+		grid-row-start: 3;
+		grid-column-start: 2;
+		align-items: center
+	}
+}

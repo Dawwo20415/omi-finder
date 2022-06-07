@@ -1,0 +1,9 @@
+@use "../../colors";
+@use "../../fonts";
+
+.Logo {
+	font-family: fonts.$RocknRollOne;
+	color: colors.$white3;
+	user-select: none;
+	white-space: nowrap;
+}

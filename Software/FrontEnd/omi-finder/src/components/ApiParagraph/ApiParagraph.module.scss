@@ -1,0 +1,10 @@
+@use "../../colors";
+@use "../../fonts";
+
+.ApiParagraph {
+	color: colors.$white3;
+	font-family: fonts.$Roboto;
+	font-size: 18px;
+	margin: 10px;
+	line-height: 26px;
+}
