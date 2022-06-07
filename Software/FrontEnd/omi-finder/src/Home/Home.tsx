@@ -6,6 +6,7 @@ import GenericField from "../components/GenericField/GenericField";
 import LoginAndRegisterSubmitButton from "../components/LoginAndRegisterSubmitButton/LoginAndRegisterButton";
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import {findZona} from '../geolocation'
 
 interface HomeProps {
 	
@@ -29,7 +30,6 @@ class Home extends React.Component <HomeProps,HomeState> {
 	 private async onFormSubmit(e: React.FormEvent<HTMLFormElement>){
 		e.preventDefault();
 		const comune= (e.currentTarget.elements[0] as HTMLInputElement).value;
-		
 		const via = (e.currentTarget.elements[4] as HTMLInputElement).value;
 
 
@@ -39,11 +39,15 @@ class Home extends React.Component <HomeProps,HomeState> {
 
 		const response = await Geocode.fromAddress(via+comune)
 		const {lat, lng} = response.results[0].geometry.location;
-		const dataObj = {
-			latitude: lat,
-			longitude: lng,
-		};
-		this.setState({coordinate:dataObj.latitude+" "+dataObj.longitude});		
+		this.setState({ coordinate: `${lat} ${lng}`});
+		
+		findZona({ lat, lng })
+		.then((valori) => {
+			console.log(valori);
+		})
+		.catch(() => {
+			// Non è stata trovata alcuna zona OMI
+		});
 	}
 
 	public render(){
@@ -93,18 +97,18 @@ class Home extends React.Component <HomeProps,HomeState> {
 				<div className={styles.LogoContainer}>
 					<Logo size={60} />
 				</div>
-				<form className={styles.Form} onSubmit={this.onFormSubmit}>
+				<form className={styles.SearchBarContainer} onSubmit={this.onFormSubmit}>
 					<Autocomplete
 						disablePortal
 						id="combo-box-demo"
 						options={comuni}
-						sx={{ width: 350 }}
-						renderInput={(params) => <TextField {...params} label="Comuni" />}
+						sx={{ width: 350,backgroundColor: "#424242",input: { color: 'white' } }}
+						renderInput={(params) => <TextField {...params} label="Comuni"/>}
 					/>
-					<GenericField description="Indirizzo"/>
+					<GenericField name='via' description="Indirizzo"/>
 					<LoginAndRegisterSubmitButton text="Cerca" />
 				</form>
-				<div>{this.state.coordinate}</div>
+				<div className={styles.Result}>{this.state.coordinate}</div>
 			</div>
 		);
 	}
