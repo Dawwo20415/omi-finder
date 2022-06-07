@@ -1,8 +1,6 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
-const url = require("url");
-const query = require("querystring");
 const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUI = require("swagger-ui-express");
 
@@ -282,17 +280,12 @@ app.get("/v2/getTipo/:settore/:tipo/:filter", async (req, res) => {
  */
 app.get("/v2/getByCoordinate", async (req, res) => {
 	try {
-		res.json(await Iapi.getByCoordinate(zona_omi.model, req.query.longitude, req.query.latitude));
+		const longitude = parseFloat(req.query.longitude);
+		const latitude = parseFloat(req.query.latitude);
+		res.json(await Iapi.getByCoordinate(zona_omi.model, longitude, latitude));
 	} catch (e) {
-		console.log("riscontrato errore");
 		res.status(400).end();
 	}
-});
-
-app.get("/v2/getByCoordinate", async (req, res) => {
-	const parsedUrl = url.parse(req.url);
-	const { latitude, longitude } = query.parse(parsedUrl.query);
-	res.json(await Iapi.getByCoordinate(zona_omi.model, longitude, latitude));
 });
 
 // Da qua in giù autenticazione

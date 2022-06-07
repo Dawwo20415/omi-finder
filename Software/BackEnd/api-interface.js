@@ -74,10 +74,11 @@ async function getByCoordinate(model, longitude, latitude) {
 	};
 
 	const result = await dbInterface.query(model, filter, "valori");
-	if (result) {
-		return result[0].valori;
-	} else {
+
+	if (result.length === 0) {
 		return {};
+	} else {
+		return result[0].valori;
 	}
 }
 
@@ -367,7 +368,7 @@ module.exports = {
 	getSettore,
 	getTipo,
 	getByCoordinate,
-	userGetStatus,
+	// userGetStatus,
 	registerUser,
 	// changePassword,
 	loginUser,
