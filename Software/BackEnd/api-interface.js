@@ -80,12 +80,16 @@ async function getByCoordinate(model, longitude, latitude) {
 // Da qua in giù autenticazione
 
 // Generazione token non utilizzata
-// const generateJWT = (email, id) => {
-// 	return jwt.sign({ email, id }, process.env.SUPER_SECRET, {
-// 		expiresIn: 86400, // expires in 24 hours
-// 	});
-// };
+/*
+const generateJWT = (email, id) => {
+	return jwt.sign({ email, id }, process.env.SUPER_SECRET, {
+		expiresIn: 86400, // expires in 24 hours
+	});
+};
+*/
 
+// Non utilizzato
+/*
 async function userGetStatus(_id, User) {
 	return (
 		User.findById(_id)
@@ -113,6 +117,7 @@ async function userGetStatus(_id, User) {
 			})
 	);
 }
+*/
 
 // Effettua il login di un utente
 async function loginUser(emailOrUsername, password, Utente) {
@@ -267,7 +272,7 @@ async function registerUser(username, email, password, createdIn, Utente) {
 					email,
 					password,
 					createdIn,
-					idPayment: "",
+					// idPayment: "",
 				});
 				user.save((err) => {
 					// Se c'è stato un errore nel salvataggio
