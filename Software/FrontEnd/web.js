@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-var bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 
 const Iapi = require("../BackEnd/api-interface.js");
 const Iatlas = require("../BackEnd/atlas-interface.js");

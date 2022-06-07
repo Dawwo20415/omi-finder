@@ -3,10 +3,15 @@ import styles from "./ApiHeader.module.scss";
 
 interface ApiHeaderProps {
 	text: string;
+	id: string;
 }
 
 const ApiHeader = (props: ApiHeaderProps) => {
-	return <h1 className={styles.ApiHeader}>{props.text}</h1>;
+	return (
+		<a id={props.id} className={styles.ApiHeader}>
+			{props.text}
+		</a>
+	);
 };
 
 export default ApiHeader;
