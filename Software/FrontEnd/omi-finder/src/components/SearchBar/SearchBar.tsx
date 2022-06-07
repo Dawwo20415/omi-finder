@@ -1,12 +1,17 @@
 import React from "react";
 import styles from "./SearchBar.module.scss";
 
+interface SearchBarProps {
+	name: string;
+	onSearch: (value: string) => void;
+}
+
 interface SearchBarState {
 	search: string;
 }
 
-class SearchBar extends React.Component<{}, SearchBarState> {
-	constructor(props: {}) {
+class SearchBar extends React.Component<SearchBarProps, SearchBarState> {
+	constructor(props: SearchBarProps) {
 		super(props);
 		this.onInputChange = this.onInputChange.bind(this);
 		this.onInputKeyDown = this.onInputKeyDown.bind(this);
@@ -28,13 +33,13 @@ class SearchBar extends React.Component<{}, SearchBarState> {
 				e.preventDefault(); // If this is not here then the seach input gets deleted
 				return;
 			case "Enter":
-				// TODO Go to map section and show address (this.state.search)
+				this.props.onSearch(this.state.search);
 				return;
 		}
 	}
 
 	private onButtonClick(e: React.MouseEvent<HTMLButtonElement>): void {
-		// TODO Go to map section and show address (this.state.search)
+		this.props.onSearch(this.state.search);
 	}
 
 	public render() {
@@ -42,6 +47,7 @@ class SearchBar extends React.Component<{}, SearchBarState> {
 			<div className={styles.SearchBar}>
 				<input
 					className={styles.SearchBarInput}
+					name={this.props.name}
 					value={this.state.search}
 					onChange={this.onInputChange}
 					onKeyDown={this.onInputKeyDown}

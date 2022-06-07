@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate, useNavigationType } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { login } from "../authentication";
 import GenericField from "../components/GenericField/GenericField";
 import GenericLink from "../components/GenericLink/GenericLink";
@@ -25,19 +25,26 @@ class Login extends React.Component {
 			password: formData.get("password") as string,
 		};
 
-		login(credentials)
-			.then((response) => {
-				// TODO Memorizzare credenziali
-				// setLocalStorageCredentials({
-
-				// });
-				const navigate = useNavigate();
-				navigate("/private-area");
+		login(credentials, true)
+			.then((result) => {
+				if (result.code === 4) {
+					// Update local storage with credentials
+					setLocalStorageCredentials({
+						email: result.email as string,
+						username: result.username as string,
+						passwordHash: result.password as string,
+					});
+					// Redirect to private area after login
+					window.history.pushState(null, "", "/private-area");
+					window.location.reload();
+				} else {
+					toastSubject.next({ hidden: false, text: result.message });
+				}
 			})
 			.catch(() => {
 				toastSubject.next({
 					hidden: false,
-					text: "Wrong email, username or password",
+					text: "Something went wrong",
 				});
 			});
 	}
