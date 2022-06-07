@@ -7,8 +7,8 @@
         "@emotion/styled": "^11.8.1",
         "@googlemaps/react-wrapper": "^1.1.33",
         "@mui/material": "^5.8.2",
-        "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^13.2.0",
+        "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/user-event": "^13.5.0",
         "crypto-js": "^4.1.1",
         "react": "^18.1.0",
@@ -23,7 +23,7 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "build": "react-scripts build && mv ./build ../",
+        "build": "react-scripts build && node ./move-build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
@@ -49,7 +49,8 @@
         "@types/crypto-js": "^4.1.1",
         "@types/jest": "^27.5.1",
         "@types/node": "^16.11.35",
+        "@types/react": "^18.0.9",
         "@types/react-dom": "^18.0.4",
-        "@types/react": "^18.0.9"
+        "@types/react-geocode": "^0.2.0"
     }
 }

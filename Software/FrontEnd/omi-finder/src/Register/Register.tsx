@@ -1,7 +1,7 @@
 import { createBrowserHistory } from "history";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { isEmailValid, register } from "../authentication";
+import { isEmailValid, isPasswordValid, isUsernameValid, register } from "../authentication";
 import GenericField from "../components/GenericField/GenericField";
 import LoginAndRegisterDescription from "../components/LoginAndRegisterDescription/LoginAndRegisterDescription";
 import LoginAndRegisterFormContainer from "../components/LoginAndRegisterFormContainer/LoginAndRegisterFormContainer";
@@ -25,42 +25,63 @@ class Register extends React.Component {
 		const username = formData.get("username") as string;
 		const password = formData.get("password") as string;
 
-		if (username.length < 3) {
-			toastSubject.next({
-				hidden: false,
-				text: "Username must have at least 3 characters",
-			});
+		if (!isUsernameValid(username)) {
+			if (username.length <= 3) {
+				toastSubject.next({
+					hidden: false,
+					text: "Username must be at least 3 characters long",
+				});
+			} else {
+				toastSubject.next({
+					hidden: false,
+					text: "Username can only contain numbers, letters and underscores",
+				});
+			}
 		} else if (!isEmailValid(email)) {
 			toastSubject.next({
 				hidden: false,
 				text: "Email is invalid",
 			});
-		} else if (password.length < 8) {
-			toastSubject.next({
-				hidden: false,
-				text: "Password must have at least 8 characters",
-			});
+		} else if (!isPasswordValid(password)) {
+			if (password.length <= 8) {
+				toastSubject.next({
+					hidden: false,
+					text: "Password must be at least 8 characters long",
+				});
+			} else {
+				toastSubject.next({
+					hidden: false,
+					text: "Password cannot contain whitespaces",
+				});
+			}
 		} else {
 			const credentials = {
 				email,
 				username,
 				password,
 			};
-			register(credentials)
-				.then(() => {
-					// TODO Sistemare password hash
-					// Update local storage with credentials
-					setLocalStorageCredentials({
-						email,
-						username,
-						passwordHash: password,
-					});
-					// Redirect to private area after login
-					window.history.pushState(null, "", "/private-area");
-					window.location.reload();
+
+			register(credentials, true)
+				.then((result) => {
+					if (result.code === 8) {
+						// Update local storage with credentials
+						setLocalStorageCredentials({
+							email: result.email as string,
+							username: result.username as string,
+							passwordHash: result.password as string,
+						});
+						// Redirect to private area after registration
+						window.history.pushState(null, "", "/private-area");
+						window.location.reload();
+					} else {
+						toastSubject.next({ hidden: false, text: result.message });
+					}
 				})
-				.catch((err) => {
-					console.error(err);
+				.catch(() => {
+					toastSubject.next({
+						hidden: false,
+						text: "Something went wrong",
+					});
 				});
 		}
 	}

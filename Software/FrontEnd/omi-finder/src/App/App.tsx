@@ -8,7 +8,7 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import ForgotPassword from "../ForgotPassword/ForgotPassword";
 import PrivateArea from "../PrivateArea/PrivateArea";
-import { readLocalStorageCredentials } from "../localStorage";
+import { getLocalStorageCredentials } from "../localStorage";
 
 interface AppState {
 	authenticated: boolean;
@@ -20,7 +20,8 @@ interface AppState {
 class App extends React.Component<{}, AppState> {
 	constructor(props: {}) {
 		super(props);
-		const { email, username, passwordHash } = readLocalStorageCredentials();
+		const { email, username, passwordHash } = getLocalStorageCredentials();
+		console.log(email, username, passwordHash);
 		const authenticated = email !== "" && username !== "" && passwordHash !== "";
 		this.state = { authenticated, email, username, passwordHash };
 	}

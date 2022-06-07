@@ -1,6 +1,6 @@
 const dbInterface = require("./atlas-interface.js");
 const res = require("express/lib/response");
-const jwt = require("jsonwebtoken");
+// const jwt = require("jsonwebtoken");
 
 async function getBy(model, filter, parameters) {
 	let result;
@@ -80,6 +80,15 @@ async function getByCoordinate(model, longitude, latitude) {
 	return result;
 }
 
+// Da qua in giù autenticazione
+
+// Generazione token non utilizzata
+// const generateJWT = (email, id) => {
+// 	return jwt.sign({ email, id }, process.env.SUPER_SECRET, {
+// 		expiresIn: 86400, // expires in 24 hours
+// 	});
+// };
+
 async function userGetStatus(_id, User) {
 	return (
 		User.findById(_id)
@@ -114,6 +123,9 @@ async function loginUser(emailOrUsername, password, Utente) {
 	// Uno username non può contenere la @ quindi se isEmailValid ritorna true
 	// vuol dire che emailOrUsername è di sicuro una email
 	if (isEmailValid(emailOrUsername)) {
+		// email case insensitive
+		emailOrUsername = emailOrUsername.toLowerCase();
+
 		const promise = new Promise(async (resolve, reject) => {
 			try {
 				const user = await Utente.findOne({
@@ -122,22 +134,15 @@ async function loginUser(emailOrUsername, password, Utente) {
 				});
 
 				if (user) {
-					const token = jwt.sign(
-						{
-							email: user.email,
-							id: user._id,
-						},
-						process.env.SUPER_SECRET,
-						{
-							expiresIn: 86400, // expires in 24 hours
-						}
-					);
-
+					// const token = generateJWT(user.email, user._id);
 					resolve({
 						success: true,
 						code: 4,
 						message: "Successfully logged in",
-						token,
+						email: user.email,
+						username: user.username,
+						password: user.password,
+						// token,
 					});
 				} else {
 					reject({
@@ -168,22 +173,15 @@ async function loginUser(emailOrUsername, password, Utente) {
 
 				// Se esiste un utente creo un jwt e risolvo la promise
 				if (user) {
-					const token = jwt.sign(
-						{
-							email: user.email,
-							id: user._id,
-						},
-						process.env.SUPER_SECRET,
-						{
-							expiresIn: 86400, // expires in 24 hours
-						}
-					);
-
+					// const token = generateJWT(user.email, user._id);
 					resolve({
 						success: true,
 						code: 4,
 						message: "Successfully logged in",
-						token,
+						email: user.email,
+						username: user.username,
+						password: user.password,
+						// token,
 					});
 				} else {
 					reject({
@@ -233,7 +231,7 @@ async function registerUser(username, email, password, createdIn, Utente) {
 		return Promise.reject({
 			success: false,
 			code: 3,
-			message: "Password is not hashed",
+			message: "Password is invalid",
 		});
 	}
 	// Dopo aver controllato i parametri procedo con la registrazione
@@ -284,10 +282,15 @@ async function registerUser(username, email, password, createdIn, Utente) {
 						});
 					}
 
+					// const token = generateJWT(user.email, user._id);
 					resolve({
 						success: true,
 						code: 8,
 						message: "User registered successfully",
+						email: user.email,
+						username: user.username,
+						password: user.password,
+						// token,
 					});
 				});
 			} catch (err) {
@@ -336,21 +339,21 @@ async function changePassword(_email, _oldPassword, _newPassword, Utente) {
 
 // Controlla che una email abbia il formato gisto
 // Una email come "nome.cognome@gmail.com" ritorna true
-function isEmailValid(email) {
+const isEmailValid = (email) => {
 	return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
 		email
 	);
-}
+};
 
-// Uno username può contenere solamente lettere numeri e _
-function isUsernameValid(username) {
-	return /^(\w|\d_)*$/.test(username);
-}
+// Uno username può contenere solamente lettere numeri e _ e deve essere lungo almeno 3 caratteri
+const isUsernameValid = (username) => {
+	return /^(\w|\d|\_){3,}$/.test(username);
+};
 
 // La password deve per forza essere compatibile con sha256
-function isPasswordValid(password) {
-	/^[a-f0-9]{64}$/gi.test(password);
-}
+const isPasswordValid = (password) => {
+	return /^[a-f0-9]{64}$/i.test(password);
+};
 
 //Exports ---------------------------------------------
 module.exports = {
@@ -360,6 +363,6 @@ module.exports = {
 	getByCoordinate,
 	userGetStatus,
 	registerUser,
-	changePassword,
+	// changePassword,
 	loginUser,
 };

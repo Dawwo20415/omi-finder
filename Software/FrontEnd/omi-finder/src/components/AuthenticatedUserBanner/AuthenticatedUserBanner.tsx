@@ -1,4 +1,5 @@
 import React from "react";
+import { deleteLocalStorageCredentials } from "../../localStorage";
 import AuthenticatedUserBannerOption from "../AuthenticatedUserBannerOption/AuthenticatedUserBannerOption";
 import styles from "./AuthenticatedUserBanner.module.scss";
 
@@ -51,14 +52,17 @@ class AuthenticatedUserBanner extends React.Component<AuthenticatedUserBannerPro
 
 	private onPrivateAreaClick(): void {
 		this.setState({ open: false });
-		console.log("private");
-		// TODO Redirect to private area
+		// Redirect to private area
+		window.history.pushState(null, "", "/private-area");
+		window.location.reload();
 	}
 
 	private onLogoutClick(): void {
 		this.setState({ open: false });
-		console.log("logout");
-		// TODO Execute logout
+		deleteLocalStorageCredentials();
+		// After logout redirect to home
+		window.history.pushState(null, "", "/home");
+		window.location.reload();
 	}
 
 	public render() {
