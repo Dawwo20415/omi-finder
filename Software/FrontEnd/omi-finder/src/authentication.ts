@@ -1,3 +1,4 @@
+// @ts-ignore
 import { SHA256 } from "crypto-js";
 
 export const isEmailValid = (email: string): boolean => {
