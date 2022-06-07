@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Home.module.scss";
 import Logo from "../components/Logo/Logo";
+// @ts-ignore
 import Geocode from "react-geocode";
 import GenericField from "../components/GenericField/GenericField";
 import LoginAndRegisterSubmitButton from "../components/LoginAndRegisterSubmitButton/LoginAndRegisterButton";
