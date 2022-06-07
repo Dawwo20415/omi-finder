@@ -1,14 +1,14 @@
 import { SHA256 } from "crypto-js";
 
 export const isEmailValid = (email: string): boolean => {
-	return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+	return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
 		email
 	);
 };
 
 // Uno username può contenere solamente lettere numeri e _ e deve essere lungo almeno 3 caratteri
 export const isUsernameValid = (username: string): boolean => {
-	return /^(\w|\d|\_){3,}$/.test(username);
+	return /^(\w|\d|_){3,}$/.test(username);
 };
 
 // La password non può contenere whitespaces e deve essere lunga almeno 8 caratteri

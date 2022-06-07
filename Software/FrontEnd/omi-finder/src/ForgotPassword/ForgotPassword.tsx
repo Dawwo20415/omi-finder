@@ -1,6 +1,5 @@
 import React from "react";
 import GenericField from "../components/GenericField/GenericField";
-import LoginAndRegisterDescription from "../components/LoginAndRegisterDescription/LoginAndRegisterDescription";
 import LoginAndRegisterFormContainer from "../components/LoginAndRegisterFormContainer/LoginAndRegisterFormContainer";
 import LoginAndRegisterSubmitButton from "../components/LoginAndRegisterSubmitButton/LoginAndRegisterButton";
 import Logo from "../components/Logo/Logo";

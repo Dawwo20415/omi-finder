@@ -1,6 +1,4 @@
-import { createBrowserHistory } from "history";
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { isEmailValid, isPasswordValid, isUsernameValid, register } from "../authentication";
 import GenericField from "../components/GenericField/GenericField";
 import LoginAndRegisterDescription from "../components/LoginAndRegisterDescription/LoginAndRegisterDescription";

@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { login } from "../authentication";
 import GenericField from "../components/GenericField/GenericField";
 import GenericLink from "../components/GenericLink/GenericLink";

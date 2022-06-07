@@ -29,37 +29,57 @@ describe("/users", () => {
 	*/
 
 	test("POST /v2/login invalid email or username", async () => {
-		expect(async () => {
-			const result = await Iapi.loginUser("invalid email", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", Utente);
-			return result.success;
-		}).toBeFalsy();
+		try {
+			await Iapi.loginUser("invalid email", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", Utente);
+		} catch (result) {
+			expect(result.success).toBeFalsy();
+		}
 	});
 
 	test("POST /v2/login invalid password", async () => {
-		expect(() => {
-            const result = await Iapi.loginUser("very.original@email.com", "invalid password", Utente)
-            return result.success;
-        }).toBeFalsy();
+		try {
+			await Iapi.loginUser("very.original@email.com", "invalid password", Utente);
+		} catch (result) {
+			expect(result.success).toBeFalsy();
+		}
 	});
-    
+
 	test("PUT /v2/register invalid username", async () => {
-        expect(() => {
-            const result = await Iapi.registerUser("invalid username", "veryoriginalemailthatdoesnotexist@email.com", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", Utente)
-            return result.success;
-        }).toBeFalsy();
+		try {
+			await Iapi.registerUser(
+				"invalid username",
+				"veryoriginalemailthatdoesnotexist@email.com",
+				"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+				Utente
+			);
+		} catch (result) {
+			expect(result.success).toBeFalsy();
+		}
 	});
 
 	test("PUT /v2/register invalid email", async () => {
-        expect(() => {
-            const result = await Iapi.registerUser("UsernameThatDoesNotAlreadyExist", "invalid email", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", Utente)
-            return result.success;
-        }).toBeFalsy();
+		try {
+			await Iapi.registerUser(
+				"UsernameThatDoesNotAlreadyExist",
+				"invalid email",
+				"9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+				Utente
+			);
+		} catch (result) {
+			expect(result.success).toBeFalsy();
+		}
 	});
 
 	test("PUT /v2/register invalid password", async () => {
-        expect(() => {
-            const result = await Iapi.registerUser("UsernameThatDoesNotAlreadyExist", "89N3PDyZzakoH7W6n8ZrjGDDktjh8iWFG6eKRvi3kvpQ", "invalid password", Utente)
-            return result.success;
-        }).toBeFalsy();
+		try {
+			await Iapi.registerUser(
+				"UsernameThatDoesNotAlreadyExist",
+				"89N3PDyZzakoH7W6n8ZrjGDDktjh8iWFG6eKRvi3kvpQ",
+				"invalid password",
+				Utente
+			);
+		} catch (result) {
+			expect(result.success).toBeFalsy();
+		}
 	});
 });
